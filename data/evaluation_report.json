@@ -1,0 +1,2469 @@
+{
+  "generated_at": "2026-09-02T12:36:15.185763Z",
+  "corpus": "Cambodian Civil & Commercial Law",
+  "aggregate_metrics": {
+    "total_questions": 51,
+    "hit_rate_at_k": 0.451,
+    "mean_recall_at_k": 0.281,
+    "mean_precision_at_k": 0.1176,
+    "top_k": 5,
+    "total_failures": 28,
+    "failure_questions": [
+      "What are the essential elements required to form a valid contract under the Cambodian Civil Code?",
+      "What are the remedies when a seller delivers goods with a defect?",
+      "What is an obligation under the Cambodian Civil Code?",
+      "What is legal capacity to perform juridical acts?",
+      "What is unjust enrichment under Cambodian civil law?",
+      "What constitutes a tort under Cambodian civil law?",
+      "What is an interim measure in arbitration and who can grant it?",
+      "What is the difference between void and voidable contracts?",
+      "How is the composition of an arbitral tribunal determined?",
+      "What is set-off and when can it be exercised?",
+      "How does the Civil Code handle duress in contract formation?",
+      "What is a usufruct under the Cambodian Civil Code?",
+      "How is inheritance determined under the Cambodian Civil Code?",
+      "What is the effect of assignment of a claim?",
+      "What is novation and what effect does it have on a contract?",
+      "What are the obligations of a mandatory under a mandate contract?",
+      "What is the legal definition of a contract under the Civil Code?",
+      "What is the extinctive prescription period for claims?",
+      "What is the effect of fraud on a juridical act?",
+      "What constitutes a mortgage under the Cambodian Civil Code?",
+      "What are the rights of joint obligors?",
+      "What is subrogation of an obligee's rights?",
+      "How does the Civil Code handle real rights over property?",
+      "What are the lessor's obligations toward the lessee?",
+      "What is a guarantee contract under the Civil Code?",
+      "What is a loan for consumption and what are the borrower's obligations?",
+      "How does the buyer's obligation to inspect goods work?",
+      "When does a contract become void due to a mistake?"
+    ]
+  },
+  "results": [
+    {
+      "question_id": 1,
+      "question": "What are the essential elements required to form a valid contract under the Cambodian Civil Code?",
+      "expected_articles": [
+        336,
+        337,
+        340
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 1155,
+          "law_name": "Civil Code 2007",
+          "score": 23.647584958420875,
+          "content_preview": "1155. (Case where the successor, etc. is an alien) \n \n(1) \nIf the successor or person acquiring property under a will does \nnot hold Cambodian nationality, such person shall be unable to succeed \nto l"
+        },
+        {
+          "article_number": 891,
+          "law_name": "Civil Code 2007",
+          "score": 23.331504994193693,
+          "content_preview": "891. \n(Extent of effect of security interest under a transfer as \nsecurity) \n \n(1) \n[The effect of] a security interest under a transfer as security \nshall extend to all things that are affixed to and"
+        },
+        {
+          "article_number": 957,
+          "law_name": "Civil Code 2007",
+          "score": 23.252017668194988,
+          "content_preview": "957. \n(Formalities of marriage between Cambodians outside \nCambodia) \n \n(1) \nCambodians abroad wishing to marry may effect notification, \npublic notice and conclusion of the contract of marriage in th"
+        },
+        {
+          "article_number": 411,
+          "law_name": "Civil Code 2007",
+          "score": 23.204025156019828,
+          "content_preview": "411. \n(Effect of termination) \n \n- 102 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording, and \ncould lack some information. It is provided f"
+        },
+        {
+          "article_number": 671,
+          "law_name": "Civil Code 2007",
+          "score": 22.743075862736795,
+          "content_preview": "671. \n(Effectiveness of consensual contract of bailment) \n \nIf there is a mere agreement between the parties to form a deposit in \nthe future, either party may revoke such agreement at any time until "
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 6.7,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 2,
+      "question": "What is the principle of good faith in Cambodian civil law?",
+      "expected_articles": [
+        5
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 5,
+          "law_name": "Civil Code 2007",
+          "score": 27.781835199196184,
+          "content_preview": "5. (The principle of good faith) \n \nRights shall be exercised and duties performed in good faith. \n \n \nBOOK TWO “PERSONS” \n \nChapter One NATURAL PERSONS \n \nSection I. Legal Capacity"
+        },
+        {
+          "article_number": 384,
+          "law_name": "Civil Code 2007",
+          "score": 25.640945304083257,
+          "content_preview": "384. \n(Obligor's duty to perform obligation) \n \n(1) \nAn obligor shall perform its contractual obligations in \naccordance with the purpose of the contract and the principle of good \nfaith. \n \n(2) \nThe "
+        },
+        {
+          "article_number": 156,
+          "law_name": "Civil Code 2007",
+          "score": 21.767165161168517,
+          "content_preview": "156. \n(Possessor and fruits) \n \n(1) \nA good faith possessor is entitled to acquire fruits generated \nfrom the possessed thing. \n \n(2) \nWhere a good faith possessor loses a lawsuit in which his title \n"
+        },
+        {
+          "article_number": 157,
+          "law_name": "Civil Code 2007",
+          "score": 21.54088745502491,
+          "content_preview": "157. \n(Responsibility for loss of or damage to a possessed thing) \n \nWhere a possessor is at fault for the loss of or damage to a thing, or \nfor any other cause preventing the return of the thing, if "
+        },
+        {
+          "article_number": 436,
+          "law_name": "Civil Code 2007",
+          "score": 21.457906526354577,
+          "content_preview": "436. \n(Good faith consumption, transfer or acquisition by bona-fide \nobligee) \n \n(1) \nIn the cases described in paragraphs (2) and (3) of Article \n435(Authority of disposition of performing person), w"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "latency_ms": 4.1,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 3,
+      "question": "What are the remedies when a seller delivers goods with a defect?",
+      "expected_articles": [
+        519,
+        520,
+        526
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 539,
+          "law_name": "Civil Code 2007",
+          "score": 23.463598084926957,
+          "content_preview": "539. \n(Obligation to deliver conforming goods) \n \n(1) \nThe seller has an obligation to deliver to the buyer goods that \nconform to the contract. \n \n(2) \nExcept where the parties have agreed otherwise,"
+        },
+        {
+          "article_number": 540,
+          "law_name": "Civil Code 2007",
+          "score": 21.522189238021653,
+          "content_preview": "540. \n(Conforming Goods Warranty Liability) \n \n(1) \nWhere the goods are nonconforming in any respect at the time that \nthe risk passes to the buyer, even if the existence of such \nnonconformance becom"
+        },
+        {
+          "article_number": 557,
+          "law_name": "Civil Code 2007",
+          "score": 20.216210174071815,
+          "content_preview": "557. \n(Right to refuse payment when third party claims interest in \nthereof. \n \n(2) \nIf a good is destroyed, lost or damaged due to the seller's failure \nto conform to the duty of care set forth in pa"
+        },
+        {
+          "article_number": 563,
+          "law_name": "Civil Code 2007",
+          "score": 19.8639535913745,
+          "content_preview": "563. \n(Exercise of Repurchase) \n \n(1) \nThe seller may not repurchase the goods sold unless he tenders \nthe purchase price and all costs incurred in connection with [the \nexecution of] the contract wit"
+        },
+        {
+          "article_number": 542,
+          "law_name": "Civil Code 2007",
+          "score": 19.847033743448907,
+          "content_preview": "542. \n(Buyer’s right to demand complete performance) \n \n(1) \nThe buyer may demand that the seller [fully and completely] \nperform its obligations. However, this shall not apply where the buyer \nhas re"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 4.0,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 4,
+      "question": "How is an offer revoked under the Cambodian Civil Code?",
+      "expected_articles": [
+        338,
+        339
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 339,
+          "law_name": "Civil Code 2007",
+          "score": 22.527020671663525,
+          "content_preview": "339. \n(Offer with no acceptance period and  revocation of the offer) \n \n(1) \nAn offer that states no acceptance period and is made inter \npraesentes where the offeree can respond at once shall lapse u"
+        },
+        {
+          "article_number": 344,
+          "law_name": "Civil Code 2007",
+          "score": 21.307685293462917,
+          "content_preview": "344. \n(Revocation of offer made to unspecified party) \n \nAn offer made to unspecified parties made through advertising or other \nmethod may be revoked only using the same method employed to make the \n"
+        },
+        {
+          "article_number": 338,
+          "law_name": "Civil Code 2007",
+          "score": 20.954167379470785,
+          "content_preview": "338. \n(Offer with acceptance period and revocation of the offer) \n \n(1) \nAn offer may be made subject to an acceptance period. An acceptance \nperiod shall, where it is unclear whether the offeror set "
+        },
+        {
+          "article_number": 337,
+          "law_name": "Civil Code 2007",
+          "score": 17.70476245916216,
+          "content_preview": "337. \n(Definition of offer and acceptance) \n \n(1) \nAn offer is an invitation to enter into a contract based on the \nofferor's intention to be legally bound by the other party's acceptance \nthereof. \n "
+        },
+        {
+          "article_number": 1181,
+          "law_name": "Civil Code 2007",
+          "score": 16.618235603793053,
+          "content_preview": "1181. (Special provision governing making of will by Cambodian living \nabroad) \n \nIf a Cambodian national who is resident in a country where a Cambodian \nConsul is stationed wishes to make a will by n"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.4,
+      "latency_ms": 3.6,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 5,
+      "question": "What are the legal requirements for a valid arbitration agreement?",
+      "expected_articles": [
+        7
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 2,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 18.43691301323901,
+          "content_preview": "Article 2:  \nDefinitions and Rules of Interpretation \n \nFor purposes of this Law: \n \n(a) \n“Arbitration” means any arbitration whether or not administered by a permanent arbitral institution; \n \n(b)   "
+        },
+        {
+          "article_number": 7,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 17.11347029260178,
+          "content_preview": "Article 7: \nDefinition and Form of Arbitration Agreement \n \nArbitration agreement includes an arbitration clause in a contract or a separate submission \nagreement. \n \n \nThe arbitration agreement shall"
+        },
+        {
+          "article_number": 44,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 16.945483450263023,
+          "content_preview": "Article 44:  \nApplication for Setting Aside as Exclusive Recourse Against Arbitral Award \n \nThe party may file an application for setting aside as exclusive recourse against arbitral award as \nfollows"
+        },
+        {
+          "article_number": 46,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 16.845703225467993,
+          "content_preview": "Article 46:   \nGrounds for Refusing Recognition or Enforcement \n \nRecognition or enforcement of an arbitral award, irrespective of the country in which it was made, \nmay be refused only: \n \n(1)   \nAt "
+        },
+        {
+          "article_number": 12,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 16.5041138757704,
+          "content_preview": "Article 12: \nQualification of Members of Arbitrators \n \nThe natural person and legal entity to be permitted as a member of the National Arbitration \nCenter are:  \n \n- \nan Arbitrator who has registered"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "latency_ms": 4.0,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 6,
+      "question": "Can an arbitral tribunal rule on its own jurisdiction?",
+      "expected_articles": [
+        24,
+        25
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 24,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 35.428439816068185,
+          "content_preview": "Article 24: \nCompetence of Arbitral Tribunal To Rule on Its Jurisdiction \n \nThe jurisdiction of Arbitral Tribunal shall determine as follows: \n \n(1) \nThe arbitral tribunal may rule on its own jurisdic"
+        },
+        {
+          "article_number": 35,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 19.31394613677557,
+          "content_preview": "Article 35: \nCourt Assistance in Taking Evidence \n \nThe arbitral tribunal, or a party with the approval of the arbitral tribunal, may request from a competent \nCourt (Commercial, or Appeal, or Supreme"
+        },
+        {
+          "article_number": 32,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 18.501910759617783,
+          "content_preview": "Article 32: \nHearings and Written Proceedings \n \nSubject to any contrary agreement by the parties, the arbitral tribunal shall decide whether to hold \noral hearings for the presentation of evidence or"
+        },
+        {
+          "article_number": 37,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 18.373881347229432,
+          "content_preview": "Article 37: \nDecision Making by Panel of Arbitrators \n \nIn arbitral proceedings with more than one arbitrator, any decision of the arbitral tribunal may be \nmade by a majority of all its members.  \n \n"
+        },
+        {
+          "article_number": 23,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 18.34222131091745,
+          "content_preview": "Article 23: \nAppointment of Substitute Arbitrator \n \nWhere the mandate of an arbitrator terminates under Article 21 or 22 of this law, a substitute \narbitrator shall be appointed according to Article "
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.5,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.2,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 7,
+      "question": "What is an obligation under the Cambodian Civil Code?",
+      "expected_articles": [
+        308
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 317,
+          "law_name": "Civil Code 2007",
+          "score": 16.733328205893887,
+          "content_preview": "317. \n(Monetary obligation in foreign currency) \n \n  \n(1) \nEven if the amount of an obligation is established in a foreign \ncurrency, the obligor may effect payment in Cambodian currency based \non the"
+        },
+        {
+          "article_number": 1181,
+          "law_name": "Civil Code 2007",
+          "score": 16.618235603793053,
+          "content_preview": "1181. (Special provision governing making of will by Cambodian living \nabroad) \n \nIf a Cambodian national who is resident in a country where a Cambodian \nConsul is stationed wishes to make a will by n"
+        },
+        {
+          "article_number": 48,
+          "law_name": "Civil Code 2007",
+          "score": 15.7336946215074,
+          "content_preview": "48. (Foreign juristic persons) \n \n(1) \nIn this law, juristic persons incorporated under foreign law are \nreferred to as “foreign juristic persons”. \n \n(2) \nForeign juristic persons are not recognized "
+        },
+        {
+          "article_number": 475,
+          "law_name": "Civil Code 2007",
+          "score": 14.72782316882622,
+          "content_preview": "475. \n(Limitation on release) \n \nIf an obligation is under attachment by a third party or the power of \nthe obligee to dispose of the obligation is restricted for any other \nreason, the obligee may no"
+        },
+        {
+          "article_number": 1155,
+          "law_name": "Civil Code 2007",
+          "score": 14.386860125973895,
+          "content_preview": "1155. (Case where the successor, etc. is an alien) \n \n(1) \nIf the successor or person acquiring property under a will does \nnot hold Cambodian nationality, such person shall be unable to succeed \nto l"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.3,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 8,
+      "question": "What are the remedies for non-performance of a contract?",
+      "expected_articles": [
+        395,
+        396,
+        399
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 394,
+          "law_name": "Civil Code 2007",
+          "score": 26.852249860298365,
+          "content_preview": "394. \n(Other non-performance) \n \nIn addition to the types of non-performance described in Articles \n391(Delayed performance) through 393(Incomplete performance), where \nthere is a breach of any other "
+        },
+        {
+          "article_number": 389,
+          "law_name": "Civil Code 2007",
+          "score": 26.29205101597773,
+          "content_preview": "389. \n(Definition and types of non-performance) \n \n‘Non-performance’ is defined as an obligor's failure to perform an \nobligation arising under a contract. The types of ‘non-performance’ are \nas follo"
+        },
+        {
+          "article_number": 390,
+          "law_name": "Civil Code 2007",
+          "score": 25.58783282314704,
+          "content_preview": "390. \n(Remedies for non-performance) \n \nWhere an obligor fails to perform an obligation, the obligee may demand \nspecific performance, damages, or termination of the contract, in \naccordance with the "
+        },
+        {
+          "article_number": 395,
+          "law_name": "Civil Code 2007",
+          "score": 25.50163799251339,
+          "content_preview": "395. \n(Multiple remedies) \n \nWhere multiple remedies are available to the obligee, the obligee may \nselect any or all of such remedies so long as they are not in mutual \nconflict. \n \nSection II. Speci"
+        },
+        {
+          "article_number": 388,
+          "law_name": "Civil Code 2007",
+          "score": 24.446953187693538,
+          "content_preview": "388. \n(Application of provisions relating to performance as a ground \nfor extinction of obligation) \n \n- 97 – \n \n \nIn addition to the provisions of this Chapter Three, the provisions of \nSection I of "
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.3333,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.3,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 9,
+      "question": "When is a contract void for violating public order or good morals?",
+      "expected_articles": [
+        354
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 354,
+          "law_name": "Civil Code 2007",
+          "score": 34.47011306812619,
+          "content_preview": "354. \n    (Contract in violation of laws or public order and good \nmorals) \n \n(1) \nEven where the declarations of intention of both parties are made \nwithout any defects, the contract shall be void in"
+        },
+        {
+          "article_number": 353,
+          "law_name": "Civil Code 2007",
+          "score": 24.490539413764907,
+          "content_preview": "353. \n (Fictitious declaration of intention) \n \n(1) \nA contract formed by fictitious declaration of intention made in \ncollusion with the other party shall be void. \n \n(2) \nThe nullity of the contract"
+        },
+        {
+          "article_number": 741,
+          "law_name": "Civil Code 2007",
+          "score": 23.20744551447346,
+          "content_preview": "741. \n(Performance for illegal cause) \n \nUnder this Chapter 15 (Unjust Enrichment), if a demand by the person \nwho has suffered loss for return of unjust enrichment would be in breach \nof public order"
+        },
+        {
+          "article_number": 725,
+          "law_name": "Civil Code 2007",
+          "score": 22.65199905842038,
+          "content_preview": "725. \n(Subject matter of compromise) \n \n(1) \nIn order to make a compromise, the parties must have the power \nto dispose of the subject matter involved in the compromise. \n \n(2) \nA compromise purportin"
+        },
+        {
+          "article_number": 769,
+          "law_name": "Civil Code 2007",
+          "score": 17.810090257489023,
+          "content_preview": "769. (Subordinate nature of real security right) \n \n(1) \nA real security right is established in order to secure an existing \ndebt. A real security right may also be established in order to secure \na "
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.8,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 10,
+      "question": "How are damages calculated for breach of contract?",
+      "expected_articles": [
+        399,
+        401,
+        403
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 403,
+          "law_name": "Civil Code 2007",
+          "score": 20.086749229640812,
+          "content_preview": "403. \n(Liquidated damages, etc.) \n \n(1) \nThe obligor and obligee may separately and in advance establish \nconditions for the payment of damages and an amount to be paid. \n \n(2) \nA special agreement ex"
+        },
+        {
+          "article_number": 406,
+          "law_name": "Civil Code 2007",
+          "score": 16.978740059071022,
+          "content_preview": "406. \n(Extinctive prescription) \n \nThe period of extinctive prescription applicable to the right to demand \ncompensation for damages based on non-performance is five years from \nthe time when the dama"
+        },
+        {
+          "article_number": 399,
+          "law_name": "Civil Code 2007",
+          "score": 16.779452476676173,
+          "content_preview": "399. \n(Special rules for monetary obligations) \n \n- 99 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording, and \ncould lack some information. "
+        },
+        {
+          "article_number": 400,
+          "law_name": "Civil Code 2007",
+          "score": 15.823158658505044,
+          "content_preview": "400. \n(Concept of damages) \n \n(1) \nThe obligee may demand as damages (a) compensation for the benefit \nof performance that would have been received under the contract, as well \nas (b) expenditures tha"
+        },
+        {
+          "article_number": 404,
+          "law_name": "Civil Code 2007",
+          "score": 15.779648049121656,
+          "content_preview": "404. \n(Compensation in money) \n \nCompensation for damages for non-performance shall be made by the \nobligor in money. However, this shall not apply where the parties \nseparately agree otherwise."
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.6667,
+      "precision_at_k": 0.4,
+      "latency_ms": 2.9,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 11,
+      "question": "What is the arbitral award recognition process under Cambodian law?",
+      "expected_articles": [
+        41,
+        42,
+        44
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 46,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 28.98225988160536,
+          "content_preview": "Article 46:   \nGrounds for Refusing Recognition or Enforcement \n \nRecognition or enforcement of an arbitral award, irrespective of the country in which it was made, \nmay be refused only: \n \n(1)   \nAt "
+        },
+        {
+          "article_number": 42,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 26.744929478094082,
+          "content_preview": "Article 42: \nApplication for Setting Aside as Exclusive Recourse Against Arbitral Award \n \nThe jurisdiction over recourse, recognition, and enforcement of arbitral award shall rest with the \nAppellate"
+        },
+        {
+          "article_number": 41,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 26.57382408050089,
+          "content_preview": "Article 41: \nCorrection and Interpretation of Award; Additional Award \n \nThe correction and interpretation of award shall determine as follows: \n \n(1)  \nWithin thirty (30) days of the receipt of the a"
+        },
+        {
+          "article_number": 44,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 25.066166820114926,
+          "content_preview": "Article 44:  \nApplication for Setting Aside as Exclusive Recourse Against Arbitral Award \n \nThe party may file an application for setting aside as exclusive recourse against arbitral award as \nfollows"
+        },
+        {
+          "article_number": 45,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 23.293982704256543,
+          "content_preview": "Article 45: \nRecognition and Enforcement \n \nAn arbitral award, irrespective of the country in which it was made, shall be recognized as binding \nand, upon application in writing to the competent court"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.6,
+      "latency_ms": 3.5,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 12,
+      "question": "What grounds exist to set aside an arbitral award in Cambodia?",
+      "expected_articles": [
+        44,
+        46
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 35.63552425757865,
+          "content_preview": "Article 44:  \nApplication for Setting Aside as Exclusive Recourse Against Arbitral Award \n \nThe party may file an application for setting aside as exclusive recourse against arbitral award as \nfollows"
+        },
+        {
+          "article_number": 46,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 31.445190627664537,
+          "content_preview": "Article 46:   \nGrounds for Refusing Recognition or Enforcement \n \nRecognition or enforcement of an arbitral award, irrespective of the country in which it was made, \nmay be refused only: \n \n(1)   \nAt "
+        },
+        {
+          "article_number": 42,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 29.7341759601183,
+          "content_preview": "Article 42: \nApplication for Setting Aside as Exclusive Recourse Against Arbitral Award \n \nThe jurisdiction over recourse, recognition, and enforcement of arbitral award shall rest with the \nAppellate"
+        },
+        {
+          "article_number": 41,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 20.27849721561496,
+          "content_preview": "Article 41: \nCorrection and Interpretation of Award; Additional Award \n \nThe correction and interpretation of award shall determine as follows: \n \n(1)  \nWithin thirty (30) days of the receipt of the a"
+        },
+        {
+          "article_number": 38,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 19.324132539902223,
+          "content_preview": "Article 38: \nSettlement \n \nUpon request by both parties, prior to commencement of formal arbitration proceedings, the \narbitral tribunal may confer with the parties for the purpose of exploring whethe"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.4,
+      "latency_ms": 3.5,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 13,
+      "question": "What is legal capacity to perform juridical acts?",
+      "expected_articles": [
+        17,
+        18,
+        20
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 375,
+          "law_name": "Civil Code 2007",
+          "score": 16.243534522652272,
+          "content_preview": "375. \n(Capacity of agent) \n \nA principal can confer an agency authorization on a person who has a \nlimited capacity to engage in legal acts. In this case, a contract \nexecuted between an agent having "
+        },
+        {
+          "article_number": 748,
+          "law_name": "Civil Code 2007",
+          "score": 16.092857116186682,
+          "content_preview": "748. \n(Tortious act of juridical person) \n \n(1) \nWhere a director or other legal representative of a juridical \nperson intentionally or negligently causes harm to another in violation \nof law in the e"
+        },
+        {
+          "article_number": 1294,
+          "law_name": "Civil Code 2007",
+          "score": 14.093379887710755,
+          "content_preview": "1294. (Emergence of successor) \n \nIf it becomes known that there is a successor, the succession property \njuridical person shall be deemed never to have existed; provided that \nthis shall not affect t"
+        },
+        {
+          "article_number": 746,
+          "law_name": "Civil Code 2007",
+          "score": 13.140424744837674,
+          "content_preview": "746. \n(Liability of persons having a duty to supervise) \n \n\n\nof 14 or a person who due to mental defect lacks the capacity to \nunderstand the legal ramifications of their actions is liable for \ndamage"
+        },
+        {
+          "article_number": 6,
+          "law_name": "Civil Code 2007",
+          "score": 13.079869938867372,
+          "content_preview": "6. (Principle of equality of legal capacity) \n \nAll natural persons are entitled to have rights and assume obligations \nin their name."
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 2.8,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 14,
+      "question": "How is a lease contract terminated in Cambodia?",
+      "expected_articles": [
+        615,
+        616,
+        617
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 245,
+          "law_name": "Civil Code 2007",
+          "score": 17.910220569321236,
+          "content_preview": "245. \n(Formation of perpetual lease) \n \n(1) \nA perpetual lease shall not be valid unless it is established by \nwriting. \n \n(2) \nA perpetual lease that is not in writing shall be deemed to be \na lease "
+        },
+        {
+          "article_number": 36,
+          "law_name": "Civil Code 2007",
+          "score": 14.615279700367283,
+          "content_preview": "36. (Cases where no residence exists within Cambodia) \n \nIf a person has no permanent residence in Cambodia, the place of abode \nin Cambodia shall be deemed to be the person's permanent residence, \nre"
+        },
+        {
+          "article_number": 650,
+          "law_name": "Civil Code 2007",
+          "score": 14.385583609064117,
+          "content_preview": "650. \n(Duties of mandatary in emergency after termination of mandate) \n \nIn cases where a mandate has terminated, if there are pressing \ncircumstances, the mandatary or his/he heir or legal representa"
+        },
+        {
+          "article_number": 615,
+          "law_name": "Civil Code 2007",
+          "score": 13.893395911986797,
+          "content_preview": "615. \n(Notice of cancellation of lease without fixed term) \n \n(1) \nIf no term is fixed for a lease in the contract, either party may \ngive notice of cancellation at any time. If the notice of cancella"
+        },
+        {
+          "article_number": 667,
+          "law_name": "Civil Code 2007",
+          "score": 12.804926003415817,
+          "content_preview": "667. \n(Personal exclusivity of employment contract) \n \n(1) \nWithout the permission of the employee, the employer cannot assign \nhis rights to a third party. \n \n(2) \nWithout the permission of the emplo"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.3333,
+      "precision_at_k": 0.2,
+      "latency_ms": 2.9,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 15,
+      "question": "What is unjust enrichment under Cambodian civil law?",
+      "expected_articles": [
+        727,
+        728,
+        729
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 309,
+          "law_name": "Civil Code 2007",
+          "score": 18.746934353678807,
+          "content_preview": "309. \n(Causes of obligation) \n \n(1) \nAn obligation may arise from a contract, unilateral legal act, \nmanagement of affairs without mandate, unjust enrichment, tortious act, \nor provision of law. \n \n(2"
+        },
+        {
+          "article_number": 741,
+          "law_name": "Civil Code 2007",
+          "score": 18.189267922787213,
+          "content_preview": "741. \n(Performance for illegal cause) \n \nUnder this Chapter 15 (Unjust Enrichment), if a demand by the person \nwho has suffered loss for return of unjust enrichment would be in breach \nof public order"
+        },
+        {
+          "article_number": 186,
+          "law_name": "Civil Code 2007",
+          "score": 15.97501227390672,
+          "content_preview": "186. \n(Affixture of movable to immovable) \n \nWhere a movable is affixed to an immovable and becomes a component \nthereof, ownership of the immovable extends to the movable unless \notherwise provided f"
+        },
+        {
+          "article_number": 736,
+          "law_name": "Civil Code 2007",
+          "score": 14.656560152769073,
+          "content_preview": "736. \n(Requirements and effect of unjust enrichment) \n \n(1) \nA person who has benefited from the property or labor of others \nwithout legal cause and has thereby caused loss to said others shall \nassu"
+        },
+        {
+          "article_number": 573,
+          "law_name": "Civil Code 2007",
+          "score": 14.375860781259288,
+          "content_preview": "573. \n(Effect of rescission of gift) \n \nIn the event of rescission of a gift under Articles 571(Rescission of \ngift on account of breach of trust, etc.) and 572(Rescission of gift \non account of pover"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.0,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 16,
+      "question": "What constitutes a tort under Cambodian civil law?",
+      "expected_articles": [
+        735,
+        736,
+        740
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 1181,
+          "law_name": "Civil Code 2007",
+          "score": 13.862488308114893,
+          "content_preview": "1181. (Special provision governing making of will by Cambodian living \nabroad) \n \nIf a Cambodian national who is resident in a country where a Cambodian \nConsul is stationed wishes to make a will by n"
+        },
+        {
+          "article_number": 745,
+          "law_name": "Civil Code 2007",
+          "score": 13.342615714336091,
+          "content_preview": "745. \n(Lack of competence to assume liability) \n \n(1) \nA minor under the age of 14 cannot be held liable in tort. \n \n(2) \nA person who due to mental defect or other reason lacks the \ncapacity to under"
+        },
+        {
+          "article_number": 48,
+          "law_name": "Civil Code 2007",
+          "score": 12.861970496305162,
+          "content_preview": "48. (Foreign juristic persons) \n \n(1) \nIn this law, juristic persons incorporated under foreign law are \nreferred to as “foreign juristic persons”. \n \n(2) \nForeign juristic persons are not recognized "
+        },
+        {
+          "article_number": 469,
+          "law_name": "Civil Code 2007",
+          "score": 12.448064335511472,
+          "content_preview": "469. \n(Set-off of obligation arising out of tort) \n \nAn obligor who owes an obligation arising out of tort may not assert \nthe extinction of such obligation based on a set-off."
+        },
+        {
+          "article_number": 957,
+          "law_name": "Civil Code 2007",
+          "score": 11.944778146180001,
+          "content_preview": "957. \n(Formalities of marriage between Cambodians outside \nCambodia) \n \n(1) \nCambodians abroad wishing to marry may effect notification, \npublic notice and conclusion of the contract of marriage in th"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 2.5,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 17,
+      "question": "How is an agency relationship created under Cambodian civil law?",
+      "expected_articles": [
+        362,
+        363,
+        365
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 368,
+          "law_name": "Civil Code 2007",
+          "score": 18.43290204854223,
+          "content_preview": "368. \n(Grounds for extinction of agency authorization) \n \n(1) \nAn agency authorization conferred by a principal via contract is \nextinguished by any of the following: \n(a) \nthe death, bankruptcy or di"
+        },
+        {
+          "article_number": 365,
+          "law_name": "Civil Code 2007",
+          "score": 17.021870752728496,
+          "content_preview": "365. \n(Creation of agency authorization)  \n \nAn agency authorization can be created by contract between the principal \nand the agent or by law."
+        },
+        {
+          "article_number": 364,
+          "law_name": "Civil Code 2007",
+          "score": 15.688905410648491,
+          "content_preview": "364. \n(Definition of agency) \n \nAgency is defined as a relationship wherein where a representative \nenters into a contract with another party by stating that he is acting \non behalf of a principal wit"
+        },
+        {
+          "article_number": 366,
+          "law_name": "Civil Code 2007",
+          "score": 14.582887347026556,
+          "content_preview": "366. \n(Scope of agency authorization) \n \n(1) \nThe scope of an agency authorization is established in the \ncontract that confers the agency authorization on the agent. Where an \nagency authorization is"
+        },
+        {
+          "article_number": 371,
+          "law_name": "Civil Code 2007",
+          "score": 14.148093128388558,
+          "content_preview": "371. \n(Liability of person acting without agency authorization) \n \nWhere a person who executes a contract as agent for another cannot \nestablish the existence of an agency authorization or obtain \nrat"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.3333,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.2,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 18,
+      "question": "What is an interim measure in arbitration and who can grant it?",
+      "expected_articles": [
+        33,
+        34
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 9,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 36.88034936801323,
+          "content_preview": "Article 9: \nArbitration Agreement and Interim Measures by Court \n \nIt is not incompatible with an arbitration agreement for a party to request, before or during arbitral \nproceedings from a Court an i"
+        },
+        {
+          "article_number": 25,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 23.61016472370519,
+          "content_preview": "Article 25: \nPower of Arbitral Panel to Order Interim Measures \n \nUnless otherwise agreed by the parties, the arbitral panel may, at the request of a party, order \nany party to take such interim measu"
+        },
+        {
+          "article_number": 7,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 15.623172107492204,
+          "content_preview": "Article 7: \nDefinition and Form of Arbitration Agreement \n \nArbitration agreement includes an arbitration clause in a contract or a separate submission \nagreement. \n \n \nThe arbitration agreement shall"
+        },
+        {
+          "article_number": 8,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 14.751428937212111,
+          "content_preview": "Article 8: \nArbitration Agreement and Substantive Claim before Court \n \nA Court before which an action is brought in a matter which is the subject of an arbitration \nagreement shall, if a party so req"
+        },
+        {
+          "article_number": 6,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 12.997527560553804,
+          "content_preview": "Article 6 of this Law to take a necessary measure for any of the following: \n \n(a)    \na party fails to act as required under such procedure, or \n \n(b) \nthe parties, or two (2) arbitrators, are unable"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 5.7,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 19,
+      "question": "What is the difference between void and voidable contracts?",
+      "expected_articles": [
+        341,
+        345,
+        354
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 358,
+          "law_name": "Civil Code 2007",
+          "score": 22.60806733705953,
+          "content_preview": "358. \n(Voidable act) \n \n(1) \nA voidable act is still effective until the person having a right \nof rescission exercise it. \n \n(2) \nWhere a  person having a right of rescission rescind the voidable \nac"
+        },
+        {
+          "article_number": 758,
+          "law_name": "Civil Code 2007",
+          "score": 15.246009196188064,
+          "content_preview": "758. \n(Calculation of damages) \n- 177 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording, and \ncould lack some information. It is provided fo"
+        },
+        {
+          "article_number": 362,
+          "law_name": "Civil Code 2007",
+          "score": 14.93695956095243,
+          "content_preview": "362. \n(Constructive ratification) \n \nA voidable act shall be deemed ratified where any of the following facts \noccurs after the time that ratification may be carried out pursuant to \nthe provisions of"
+        },
+        {
+          "article_number": 360,
+          "law_name": "Civil Code 2007",
+          "score": 13.633424918724456,
+          "content_preview": "360. \n(Method of rescission or ratification) \nWhere the other party to a voidable act is identified, the rescission \nor ratification shall be carried out with notification to the other \nparty. The res"
+        },
+        {
+          "article_number": 14,
+          "law_name": "Civil Code 2007",
+          "score": 13.564148089005155,
+          "content_preview": "14. (Lack of capacity) \n- 10 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording, and \ncould lack some information. It is provided for informa"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.6,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 20,
+      "question": "What happens if the subject matter of a contract becomes impossible to perform?",
+      "expected_articles": [
+        392,
+        393
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 420,
+          "law_name": "Civil Code 2007",
+          "score": 27.685775920680715,
+          "content_preview": "420. \n(Burden of risk in bilateral contract involving commission or \nomission of act) \n \nWhere one of the parties to a bilateral contract has an obligation to \nperform or not perform a certain act and"
+        },
+        {
+          "article_number": 392,
+          "law_name": "Civil Code 2007",
+          "score": 23.779971772494246,
+          "content_preview": "392. \n(Impossibility of performance) \n \n(1) \nWhere it is physically impossible to perform the obligation, the \nperformance is deemed impossible. Performance shall also be deemed \nimpossible where perf"
+        },
+        {
+          "article_number": 1211,
+          "law_name": "Civil Code 2007",
+          "score": 23.51529348846411,
+          "content_preview": "1211. (Liability of donee of testamentary gift subject to charge) \n \n(1) \nA person who has received a testamentary gift subject to a charge \nshall be liable to perform the obligation which he has assu"
+        },
+        {
+          "article_number": 313,
+          "law_name": "Civil Code 2007",
+          "score": 22.829666607099277,
+          "content_preview": "313. \n(Types of obligations) \n \nThe subject matter of an obligation may be the transfer of ownership \nof, or the right to possess, property or money, or to perform or not \nto perform a certain act."
+        },
+        {
+          "article_number": 418,
+          "law_name": "Civil Code 2007",
+          "score": 22.550162748711337,
+          "content_preview": "418. \n(Burden of risk where the subject matter of contract constitutes \nunspecified property) \n \n(1) \nWhere the subject matter of a bilateral contract constitutes the \ntransfer of title to non-specifi"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.5,
+      "precision_at_k": 0.2,
+      "latency_ms": 4.4,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 21,
+      "question": "How is the composition of an arbitral tribunal determined?",
+      "expected_articles": [
+        14,
+        15,
+        16
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 17,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 29.44057139286444,
+          "content_preview": "Article 17: \nOrganization and Functioning of National Arbitration Center \n \nThe organization and functioning of National Arbitration Center shall be determined by \nimplementing Sub-Decree. \n \n \nCHAPTE"
+        },
+        {
+          "article_number": 24,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 23.869580559725037,
+          "content_preview": "Article 24: \nCompetence of Arbitral Tribunal To Rule on Its Jurisdiction \n \nThe jurisdiction of Arbitral Tribunal shall determine as follows: \n \n(1) \nThe arbitral tribunal may rule on its own jurisdic"
+        },
+        {
+          "article_number": 30,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 22.19135290155995,
+          "content_preview": "Article 30: \nLanguage \n \nThe parties are free to agree on the language or languages to be used in the arbitral proceedings. \nFailing such agreement, the arbitral tribunal shall determine the language "
+        },
+        {
+          "article_number": 40,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 22.126221084574897,
+          "content_preview": "Article 40: \nTermination of Proceedings \n \nThe arbitral Proceedings are terminated by the final award, an agreed settlement, or by an order \nof the arbitral tribunal in accordance with Paragraph (2) o"
+        },
+        {
+          "article_number": 44,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 21.908200078204246,
+          "content_preview": "Article 44:  \nApplication for Setting Aside as Exclusive Recourse Against Arbitral Award \n \nThe party may file an application for setting aside as exclusive recourse against arbitral award as \nfollows"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.1,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 22,
+      "question": "What is set-off and when can it be exercised?",
+      "expected_articles": [
+        429,
+        430,
+        431
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 472,
+          "law_name": "Civil Code 2007",
+          "score": 20.765720633887824,
+          "content_preview": "472. \n(Assignment in case of set-off) \n \nIf one or both of the parties to a set-off owe more than one obligation \nsuitable for set-off, the party declaring a set-off may designate the \nobligations whi"
+        },
+        {
+          "article_number": 466,
+          "law_name": "Civil Code 2007",
+          "score": 20.370639283396734,
+          "content_preview": "466. \n(Timing of effect of set-off) \n \nWhere the requirements for a set-off are satisfied, if a party declares \na set-off, the set-off shall have effect of retroactively extinguishing \nthe two obligat"
+        },
+        {
+          "article_number": 471,
+          "law_name": "Civil Code 2007",
+          "score": 20.0604477661436,
+          "content_preview": "471. \n(Obligation under attachment order) \n \n(1) \nWhere an obligation is under an order of attachment initiated by \na third party, the obligor may set off the obligation only against a \ncounter-obliga"
+        },
+        {
+          "article_number": 468,
+          "law_name": "Civil Code 2007",
+          "score": 19.652594447235124,
+          "content_preview": "468. \n(Set-off when the counter-obligation is subject to defense) \n \n(1) \nA party may not execute a set-off if [the counter-obligation owed \nby the other party] is subject to any defense exercisable b"
+        },
+        {
+          "article_number": 467,
+          "law_name": "Civil Code 2007",
+          "score": 17.59619602804011,
+          "content_preview": "467. \n(Limitations on set-off) \n \n(1) \nIf either or both of the obligations are not suitable for a set-off \nin light of the nature of the obligation(s), a set-off may not be \nexecuted. \n \n(2) \nIf ther"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.2,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 23,
+      "question": "What are the arbitration tribunal's powers regarding evidence?",
+      "expected_articles": [
+        29,
+        30
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 35,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 22.930729994792177,
+          "content_preview": "Article 35: \nCourt Assistance in Taking Evidence \n \nThe arbitral tribunal, or a party with the approval of the arbitral tribunal, may request from a competent \nCourt (Commercial, or Appeal, or Supreme"
+        },
+        {
+          "article_number": 27,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 22.811467739395354,
+          "content_preview": "Article 27: \nDetermination of Rules of Procedure \n \nThe parties are free to agree or disagree on the procedure to be followed by the arbitral tribunal in \nconducting the proceedings. \n \nFailing such a"
+        },
+        {
+          "article_number": 30,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 21.68814051302011,
+          "content_preview": "Article 30: \nLanguage \n \nThe parties are free to agree on the language or languages to be used in the arbitral proceedings. \nFailing such agreement, the arbitral tribunal shall determine the language "
+        },
+        {
+          "article_number": 32,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 17.72177064930436,
+          "content_preview": "Article 32: \nHearings and Written Proceedings \n \nSubject to any contrary agreement by the parties, the arbitral tribunal shall decide whether to hold \noral hearings for the presentation of evidence or"
+        },
+        {
+          "article_number": 28,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 16.564665703472304,
+          "content_preview": "Article 28: \nPlace of Arbitration \n \nThe parties are free to agree on the place of arbitration. Failing such agreement, the place of \narbitration shall be determined by the arbitral tribunal having re"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.5,
+      "precision_at_k": 0.2,
+      "latency_ms": 2.8,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 24,
+      "question": "How does the Civil Code handle duress in contract formation?",
+      "expected_articles": [
+        33,
+        34,
+        35
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 963,
+          "law_name": "Civil Code 2007",
+          "score": 20.831157204062986,
+          "content_preview": "963. \n(Annulment of marriage based on fraud or duress) \n \n(1) \nA person who has been induced by fraud or duress to effect a \nmarriage may apply to the court for annulment of such marriage. \n \n(2) \nThe"
+        },
+        {
+          "article_number": 350,
+          "law_name": "Civil Code 2007",
+          "score": 18.277639984298855,
+          "content_preview": "350. \n(Duress) \n \n A person who makes a declaration of intention because of duress exerted \nby the other party or a third party may rescind the contract on the ground \nof the defect of the declaration"
+        },
+        {
+          "article_number": 959,
+          "law_name": "Civil Code 2007",
+          "score": 17.40213008056742,
+          "content_preview": "959. \n(Annulment of marriage) \n \nAnnulment of a marriage shall be effected in accordance with Articles \n960(Annulment of unlawful marriage), etc.) to 963(Annulment of marriage \nbased on fraud or dures"
+        },
+        {
+          "article_number": 380,
+          "law_name": "Civil Code 2007",
+          "score": 16.36678540692454,
+          "content_preview": "380. \n(Third-party beneficiary) \n \nIn the course of the formation of the contract, the third-party \nbeneficiary need not exist when the requirements identifying the \nthird-party beneficiary are clearl"
+        },
+        {
+          "article_number": 342,
+          "law_name": "Civil Code 2007",
+          "score": 15.745298217680627,
+          "content_preview": "342. \n(Acceptance of offer with modification) \n \n(1) \nThe acceptance, to which the acceptor attaches any condition or \nany other substantial modification, shall not be vaid, but such \npurported accept"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.3,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 25,
+      "question": "What is a usufruct under the Cambodian Civil Code?",
+      "expected_articles": [
+        215,
+        216,
+        217
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 267,
+          "law_name": "Civil Code 2007",
+          "score": 19.93528158002607,
+          "content_preview": "267. \n(Demand for extinguishment of usufruct) \n \n(1) \nIf the usufructuary inflicts significant damage on or does not \nproperly preserve the immovable that is the subject of the usufruct or \notherwise "
+        },
+        {
+          "article_number": 1181,
+          "law_name": "Civil Code 2007",
+          "score": 19.28585996740047,
+          "content_preview": "1181. (Special provision governing making of will by Cambodian living \nabroad) \n \nIf a Cambodian national who is resident in a country where a Cambodian \nConsul is stationed wishes to make a will by n"
+        },
+        {
+          "article_number": 260,
+          "law_name": "Civil Code 2007",
+          "score": 18.303649507472766,
+          "content_preview": "260. \n(Term of usufruct) \n \n(1) \nA specified term may be provided for a usufruct, or it may be \nprovided that it will continue until the occurrence of a certain event. \n \n(2) \nIf no term is specified "
+        },
+        {
+          "article_number": 258,
+          "law_name": "Civil Code 2007",
+          "score": 18.105250422901268,
+          "content_preview": "258. \n(Formation of usufruct) \n \n(1) \nA usufruct may be created in writing or otherwise. \n \n(2) \nThe owner may at any time give notice of the extinguishment of \na usufruct that is not in writing. In c"
+        },
+        {
+          "article_number": 259,
+          "law_name": "Civil Code 2007",
+          "score": 18.071775466190687,
+          "content_preview": "259. \n(Requirements for perfection of usufruct) \n \n(1) \nUnless a usufruct is registered, it cannot be held up against third \nparties. \n \n- 68 – \n \n \n This is an unofficial translation of the Law. It c"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.0,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 26,
+      "question": "What is the scope of arbitrability under the Law on Commercial Arbitration?",
+      "expected_articles": [
+        1,
+        2,
+        3
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 1,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 27.782828876132996,
+          "content_preview": "Article 1:  \nPurpose and Scope of Application \n \nThe purpose of this law is to facilitate the impartial and prompt resolution of commercial disputes \nin accordance with the wishes of the parties, to s"
+        },
+        {
+          "article_number": 46,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 24.937230346173614,
+          "content_preview": "Article 46:   \nGrounds for Refusing Recognition or Enforcement \n \nRecognition or enforcement of an arbitral award, irrespective of the country in which it was made, \nmay be refused only: \n \n(1)   \nAt "
+        },
+        {
+          "article_number": 10,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 24.732759610166326,
+          "content_preview": "Article 10: \nNational Arbitration Center \n \nAn independent National Arbitration Center (“NAC”) shall be established under the auspices of \nMinistry of Commerce. The objectives of the National Arbitrat"
+        },
+        {
+          "article_number": 47,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 24.65179098922939,
+          "content_preview": "Article 47: \nAbrogation \n \nAny provisions in commercial arbitration sector that are contrary to this Law shall be abrogated. \n \n \n \nThis Law is enacted by the National Assembly of the \n \nKingdom of Ca"
+        },
+        {
+          "article_number": 6,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 24.26778895706072,
+          "content_preview": "Article 6 of this Law to take a necessary measure for any of the following: \n \n(a)    \na party fails to act as required under such procedure, or \n \n(b) \nthe parties, or two (2) arbitrators, are unable"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.3333,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.6,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 27,
+      "question": "How is inheritance determined under the Cambodian Civil Code?",
+      "expected_articles": [
+        1008,
+        1009,
+        1010
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 1264,
+          "law_name": "Civil Code 2007",
+          "score": 19.644286209138286,
+          "content_preview": "1264. (Temporary manager of inheritance) \n \n(1) \nIf there is no executor to manage the whole inheritance,, a \nsuccessor, legatee or creditor of the decedent may apply to the court \nfor appointment of "
+        },
+        {
+          "article_number": 326,
+          "law_name": "Civil Code 2007",
+          "score": 17.114918367563615,
+          "content_preview": "326. \n(Disposition of right subject to condition) \n \nA right that is subject to a condition may be the object of an inheritance, \ndisposition or security interest.  Furthermore, an obligation subject "
+        },
+        {
+          "article_number": 1181,
+          "law_name": "Civil Code 2007",
+          "score": 16.530276204228215,
+          "content_preview": "1181. (Special provision governing making of will by Cambodian living \nabroad) \n \nIf a Cambodian national who is resident in a country where a Cambodian \nConsul is stationed wishes to make a will by n"
+        },
+        {
+          "article_number": 48,
+          "law_name": "Civil Code 2007",
+          "score": 15.662798477069291,
+          "content_preview": "48. (Foreign juristic persons) \n \n(1) \nIn this law, juristic persons incorporated under foreign law are \nreferred to as “foreign juristic persons”. \n \n(2) \nForeign juristic persons are not recognized "
+        },
+        {
+          "article_number": 1155,
+          "law_name": "Civil Code 2007",
+          "score": 14.33220872459879,
+          "content_preview": "1155. (Case where the successor, etc. is an alien) \n \n(1) \nIf the successor or person acquiring property under a will does \nnot hold Cambodian nationality, such person shall be unable to succeed \nto l"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.0,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 28,
+      "question": "What is the effect of assignment of a claim?",
+      "expected_articles": [
+        447,
+        448,
+        449
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 502,
+          "law_name": "Civil Code 2007",
+          "score": 25.50747407753324,
+          "content_preview": "502. \n(Establishment of assignment of claim) \n \nThe assignment of a claim shall take effect only through agreement \nbetween the obligee seeking to assign the claim and the assignee. \nHowever, in order"
+        },
+        {
+          "article_number": 513,
+          "law_name": "Civil Code 2007",
+          "score": 24.287586698687196,
+          "content_preview": "513. \n(Establishment of assignment of contractual position) \n \nThe assignment of a contractual position shall take effect only upon \nthe agreement of the assignee and the party to the contract who is "
+        },
+        {
+          "article_number": 501,
+          "law_name": "Civil Code 2007",
+          "score": 24.280347179817273,
+          "content_preview": "501. \n(Assignability of claims, special agreement prohibiting \nassignment) \n \n- 121 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording, and \n"
+        },
+        {
+          "article_number": 809,
+          "law_name": "Civil Code 2007",
+          "score": 22.671014454419197,
+          "content_preview": "809. (Effect of general statutory lien) \n \n(1) \nHolders of a general statutory lien cannot be paid out of immovable \nproperties unless they are first paid out of property other than \nimmovable propert"
+        },
+        {
+          "article_number": 503,
+          "law_name": "Civil Code 2007",
+          "score": 22.575996282980476,
+          "content_preview": "503. \n(Requirement for Assertion of  Assignment of Nominative Claim \nagainst Third Parties) \n \n(1) \nThe assignment of a nominative claim may not be asserted against \nthe applicable obligor or any othe"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 2.9,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 29,
+      "question": "What is novation and what effect does it have on a contract?",
+      "expected_articles": [
+        443,
+        444
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 477,
+          "law_name": "Civil Code 2007",
+          "score": 20.300536522424814,
+          "content_preview": "477. \n(Non-extinction of original obligation) \n \nIf an obligation created by a novation contract does not come into effect \nbecause the obligor of the original obligations cannot be expected or \nif th"
+        },
+        {
+          "article_number": 809,
+          "law_name": "Civil Code 2007",
+          "score": 20.182277985507476,
+          "content_preview": "809. (Effect of general statutory lien) \n \n(1) \nHolders of a general statutory lien cannot be paid out of immovable \nproperties unless they are first paid out of property other than \nimmovable propert"
+        },
+        {
+          "article_number": 476,
+          "law_name": "Civil Code 2007",
+          "score": 19.78623016562776,
+          "content_preview": "476. \n(Meaning of novation) \n \n(1) \nA novation shall refer to a contract that extinguishes the \noriginal obligation and creates a new obligation in its place as between \nthe same obligee and obligor. "
+        },
+        {
+          "article_number": 927,
+          "law_name": "Civil Code 2007",
+          "score": 17.815904683308503,
+          "content_preview": "927. \n(Universal effect of novation) \n \nThe execution of a novation between the obligee and any joint obligor \nshall serve to extinguish the obligation for all obligors. \n \n- 216 – \n \n \n This is an un"
+        },
+        {
+          "article_number": 329,
+          "law_name": "Civil Code 2007",
+          "score": 15.787229529928542,
+          "content_preview": "329. \n(Meaning of time) \n \n(1) \nIf an effect of a contract is subject to a commencement time, the \ncontract does not come into effect until such time has arrived. If a \nperformance of a contract is su"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.6,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 30,
+      "question": "What are the obligations of a mandatory under a mandate contract?",
+      "expected_articles": [
+        673,
+        674,
+        675
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 354,
+          "law_name": "Civil Code 2007",
+          "score": 23.95427525029531,
+          "content_preview": "354. \n    (Contract in violation of laws or public order and good \nmorals) \n \n(1) \nEven where the declarations of intention of both parties are made \nwithout any defects, the contract shall be void in"
+        },
+        {
+          "article_number": 353,
+          "law_name": "Civil Code 2007",
+          "score": 20.285799783542853,
+          "content_preview": "353. \n (Fictitious declaration of intention) \n \n(1) \nA contract formed by fictitious declaration of intention made in \ncollusion with the other party shall be void. \n \n(2) \nThe nullity of the contract"
+        },
+        {
+          "article_number": 647,
+          "law_name": "Civil Code 2007",
+          "score": 19.527481462279027,
+          "content_preview": "647. \n(Cancellation of mandate) \n \n(1) \nA mandate may be cancelled by either party at any time. \n \n(2) \nIf a party cancels a mandate at a time that is detrimental to the \nother party, the former party"
+        },
+        {
+          "article_number": 640,
+          "law_name": "Civil Code 2007",
+          "score": 19.515173979879496,
+          "content_preview": "640. \n(Mandatary’s duty of care) \n \n(1) \nThe mandatary shall assume a duty to administer the mandated \nbusiness with the care of a good manager compliance with the main purport \nof the mandate; provid"
+        },
+        {
+          "article_number": 382,
+          "law_name": "Civil Code 2007",
+          "score": 19.263219941542694,
+          "content_preview": "382. \n(Defense of contract donor) \n \nA contract donor under a contract to confer a right or benefit on a third \nparty may assert against the third-party beneficiary any defenses \narising under the con"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.4,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 31,
+      "question": "How is a contract formed by offer and acceptance under the Civil Code?",
+      "expected_articles": [
+        336,
+        337
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 342,
+          "law_name": "Civil Code 2007",
+          "score": 32.17540864503156,
+          "content_preview": "342. \n(Acceptance of offer with modification) \n \n(1) \nThe acceptance, to which the acceptor attaches any condition or \nany other substantial modification, shall not be vaid, but such \npurported accept"
+        },
+        {
+          "article_number": 339,
+          "law_name": "Civil Code 2007",
+          "score": 30.20404471755835,
+          "content_preview": "339. \n(Offer with no acceptance period and  revocation of the offer) \n \n(1) \nAn offer that states no acceptance period and is made inter \npraesentes where the offeree can respond at once shall lapse u"
+        },
+        {
+          "article_number": 337,
+          "law_name": "Civil Code 2007",
+          "score": 29.543208200317036,
+          "content_preview": "337. \n(Definition of offer and acceptance) \n \n(1) \nAn offer is an invitation to enter into a contract based on the \nofferor's intention to be legally bound by the other party's acceptance \nthereof. \n "
+        },
+        {
+          "article_number": 338,
+          "law_name": "Civil Code 2007",
+          "score": 28.24940554622533,
+          "content_preview": "338. \n(Offer with acceptance period and revocation of the offer) \n \n(1) \nAn offer may be made subject to an acceptance period. An acceptance \nperiod shall, where it is unclear whether the offeror set "
+        },
+        {
+          "article_number": 336,
+          "law_name": "Civil Code 2007",
+          "score": 27.562345216044385,
+          "content_preview": "336. \n(Formation of contract via offer and acceptance) \n \n(1) \nA contract comes into effect when an offer and an acceptance \nthereof conform to each other. \n(2) \nNotwithstanding the provisions of para"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.4,
+      "latency_ms": 3.9,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 32,
+      "question": "What is the legal definition of a contract under the Civil Code?",
+      "expected_articles": [
+        311
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 379,
+          "law_name": "Civil Code 2007",
+          "score": 25.61212854787846,
+          "content_preview": "379. \n(Definition) \n \n(1) \nThe parties to a contract can agree to confer a right or benefit \narising under the contract upon a third party. In this case, the person \nwho is to perform a duty under the"
+        },
+        {
+          "article_number": 310,
+          "law_name": "Civil Code 2007",
+          "score": 24.16594987356745,
+          "content_preview": "310. \n(Definition of declaration of intention) \n \n(1) \nA declaration of intention is an expression of intention made by \na party with the intent to create a legal effect. \n \n(2) \nThe declaration of in"
+        },
+        {
+          "article_number": 364,
+          "law_name": "Civil Code 2007",
+          "score": 24.10719059813679,
+          "content_preview": "364. \n(Definition of agency) \n \nAgency is defined as a relationship wherein where a representative \nenters into a contract with another party by stating that he is acting \non behalf of a principal wit"
+        },
+        {
+          "article_number": 312,
+          "law_name": "Civil Code 2007",
+          "score": 24.062214395769825,
+          "content_preview": "312. \n(Definition of unilateral legal act) \n \n(1) \nA unilateral legal act is an act that creates, changes or \nextinguishes an obligation through the unilateral expression of an \nintention to dispose o"
+        },
+        {
+          "article_number": 652,
+          "law_name": "Civil Code 2007",
+          "score": 23.276768198519523,
+          "content_preview": "652. \n(Definition of contract for work) \n \nA contract for work is a contract whereby one party [(the “contractor”)] \nassumes the obligation to complete agreed work and the other party [(the \n“principa"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.4,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 33,
+      "question": "What is the extinctive prescription period for claims?",
+      "expected_articles": [
+        468,
+        469,
+        470
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 482,
+          "law_name": "Civil Code 2007",
+          "score": 26.98006574249508,
+          "content_preview": "482. \n(Extinctive prescription period for general claim) \n \nThe extinctive prescription period for claims is five years, except as \notherwise provided in this Code or in other laws or ordinances."
+        },
+        {
+          "article_number": 496,
+          "law_name": "Civil Code 2007",
+          "score": 26.743781364483272,
+          "content_preview": "496. \n(Suspension of completion of extinctive prescription period \nregarding rights pertaining to minors or incompetent persons) \n \nWhere there is no legal representative for a minor or incompetent pe"
+        },
+        {
+          "article_number": 481,
+          "law_name": "Civil Code 2007",
+          "score": 25.521449380486807,
+          "content_preview": "481. \n(Commencement of extinctive prescription period for claim) \n \nExtinctive prescription regarding a claim runs from the time that the \nclaim is capable of being exercised."
+        },
+        {
+          "article_number": 483,
+          "law_name": "Civil Code 2007",
+          "score": 25.27968146707279,
+          "content_preview": "483. \n(Short extinctive prescription period) \n \nThe extinctive prescription period for a claim pertaining to the price \nof a product or service sold or provided by a manufacturer or merchant \nto a non"
+        },
+        {
+          "article_number": 484,
+          "law_name": "Civil Code 2007",
+          "score": 24.95625480965031,
+          "content_preview": "484. \n(Extinctive prescription period for established claim) \n \n(1) \nThe extinctive prescription period for a claim that is \ndefinitively established through a final and binding judgment, a \njudicial "
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 2.6,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 34,
+      "question": "What is the effect of fraud on a juridical act?",
+      "expected_articles": [
+        36,
+        37
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 748,
+          "law_name": "Civil Code 2007",
+          "score": 23.396721723026033,
+          "content_preview": "748. \n(Tortious act of juridical person) \n \n(1) \nWhere a director or other legal representative of a juridical \nperson intentionally or negligently causes harm to another in violation \nof law in the e"
+        },
+        {
+          "article_number": 347,
+          "law_name": "Civil Code 2007",
+          "score": 20.570779793208246,
+          "content_preview": "347. \n (Fraud) \n \n- 87 – \n \n \n(1) \nA person who makes a  declaration of intention because of the fraud \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent w"
+        },
+        {
+          "article_number": 963,
+          "law_name": "Civil Code 2007",
+          "score": 20.40950296622729,
+          "content_preview": "963. \n(Annulment of marriage based on fraud or duress) \n \n(1) \nA person who has been induced by fraud or duress to effect a \nmarriage may apply to the court for annulment of such marriage. \n \n(2) \nThe"
+        },
+        {
+          "article_number": 649,
+          "law_name": "Civil Code 2007",
+          "score": 18.681122410508276,
+          "content_preview": "649. \n(Grounds of termination of mandate) \n \n(1) \nIn addition to cancellation pursuant to Article 647(Cancellation \nof mandate), a mandate shall terminate for the following grounds: \na) \ndeath of the "
+        },
+        {
+          "article_number": 33,
+          "law_name": "Civil Code 2007",
+          "score": 18.22672990071035,
+          "content_preview": "33. (Fraud by incompetent) \n \nIf an incompetent person has used fraudulent means to induce the belief \n- 14 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and i"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.8,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 35,
+      "question": "What constitutes a mortgage under the Cambodian Civil Code?",
+      "expected_articles": [
+        263,
+        264,
+        265
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 1181,
+          "law_name": "Civil Code 2007",
+          "score": 16.685908593105545,
+          "content_preview": "1181. (Special provision governing making of will by Cambodian living \nabroad) \n \nIf a Cambodian national who is resident in a country where a Cambodian \nConsul is stationed wishes to make a will by n"
+        },
+        {
+          "article_number": 957,
+          "law_name": "Civil Code 2007",
+          "score": 16.526219799791384,
+          "content_preview": "957. \n(Formalities of marriage between Cambodians outside \nCambodia) \n \n(1) \nCambodians abroad wishing to marry may effect notification, \npublic notice and conclusion of the contract of marriage in th"
+        },
+        {
+          "article_number": 1155,
+          "law_name": "Civil Code 2007",
+          "score": 15.227082667226593,
+          "content_preview": "1155. (Case where the successor, etc. is an alien) \n \n(1) \nIf the successor or person acquiring property under a will does \nnot hold Cambodian nationality, such person shall be unable to succeed \nto l"
+        },
+        {
+          "article_number": 418,
+          "law_name": "Civil Code 2007",
+          "score": 15.031101808826335,
+          "content_preview": "418. \n(Burden of risk where the subject matter of contract constitutes \nunspecified property) \n \n(1) \nWhere the subject matter of a bilateral contract constitutes the \ntransfer of title to non-specifi"
+        },
+        {
+          "article_number": 48,
+          "law_name": "Civil Code 2007",
+          "score": 14.704463417085329,
+          "content_preview": "48. (Foreign juristic persons) \n \n(1) \nIn this law, juristic persons incorporated under foreign law are \nreferred to as “foreign juristic persons”. \n \n(2) \nForeign juristic persons are not recognized "
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.1,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 36,
+      "question": "What are the rights of joint obligors?",
+      "expected_articles": [
+        421,
+        422,
+        423
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 922,
+          "law_name": "Civil Code 2007",
+          "score": 17.885707199430282,
+          "content_preview": "922. \n(Creation of joint obligation) \n \n(1) \nA joint obligation is created by a provision of law or by the \nexpress or implied agreement between the obligee and each of multiple \nobligors who are ackn"
+        },
+        {
+          "article_number": 921,
+          "law_name": "Civil Code 2007",
+          "score": 17.819757193830085,
+          "content_preview": "921. \n(Definition of joint obligation) \n \n(1) \nWhere multiple persons have assumed a joint obligation, the \nobligee may demand full or partial performance from any individual \nobligee or from all of t"
+        },
+        {
+          "article_number": 914,
+          "law_name": "Civil Code 2007",
+          "score": 17.572675237365853,
+          "content_preview": "914. \n(Right to indemnification of guarantor on behalf of one of \nseveral obligors) \n- 213 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording"
+        },
+        {
+          "article_number": 937,
+          "law_name": "Civil Code 2007",
+          "score": 17.538798736904553,
+          "content_preview": "937. \n(Indivisible obligation, sham obligation, divisible obligation) \n \n \n(1) \nWhere multiple obligors owe the same obligation to a single \nobligee, if the obligors are not acknowledged to have in co"
+        },
+        {
+          "article_number": 926,
+          "law_name": "Civil Code 2007",
+          "score": 17.2960997820134,
+          "content_preview": "926. \n(Universal effect of offset) \n \n(1) \nWhere one joint obligor has a claim against the obligee, the \nobligor's offset of the claim against the obligation shall serve to \nextinguish the obligation "
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 2.6,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 37,
+      "question": "What are the parties' rights when conditions precedent are not fulfilled?",
+      "expected_articles": [
+        325,
+        326,
+        327
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 325,
+          "law_name": "Civil Code 2007",
+          "score": 19.580115472954354,
+          "content_preview": "325. \n(Meaning of conditions) \n \n(1) \nThe  contracting party may impose conditions with regard to the \n- 82 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and i"
+        },
+        {
+          "article_number": 1194,
+          "law_name": "Civil Code 2007",
+          "score": 18.69924726879244,
+          "content_preview": "1194. (Time when will becomes effective) \n \n(1) \nA will becomes effective upon the death of the testator. \n \n(2) \nIf in a case where a will is subject to a condition precedent, \nthe condition is fulfi"
+        },
+        {
+          "article_number": 419,
+          "law_name": "Civil Code 2007",
+          "score": 16.310888193579984,
+          "content_preview": "419. \n(Contract subject to condition precedent) \n \nWhere the property comprising the subject matter of a bilateral contract \nsubject to a condition precedent is destroyed, lost or damaged prior to \nfu"
+        },
+        {
+          "article_number": 328,
+          "law_name": "Civil Code 2007",
+          "score": 15.352970728392513,
+          "content_preview": "328. \n(Constructive fulfillment of conditions) \n \nIf a party for whom the fulfillment of a condition would be detrimental \nintentionally obstructs the fulfillment of such condition, the other \nparty m"
+        },
+        {
+          "article_number": 1167,
+          "law_name": "Civil Code 2007",
+          "score": 14.961112522727799,
+          "content_preview": "1167. (Relationship against third parties) \n \nAdjustment of succession shares pursuant to the provisions of this \nSection III. may not be held up against any third party unless \nrequirements for perfe"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.3333,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.3,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 38,
+      "question": "What is subrogation of an obligee's rights?",
+      "expected_articles": [
+        458,
+        459,
+        460
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 425,
+          "law_name": "Civil Code 2007",
+          "score": 18.824098924720634,
+          "content_preview": "425. \n(Relationship between subrogating obligee and obligor) \n \nWhere the obligor is notified of the obligee's exercise of the obligor's \nrights via subrogation, the obligor may not exercise such righ"
+        },
+        {
+          "article_number": 427,
+          "law_name": "Civil Code 2007",
+          "score": 18.162536280020287,
+          "content_preview": "427. \n(Effect of exercise of right of subrogation and other obligees) \n \nWhere performance is received by a subrogating obligee from a \nthird-party obligor due to exercise of a right of subrogation by"
+        },
+        {
+          "article_number": 423,
+          "law_name": "Civil Code 2007",
+          "score": 17.560320456194532,
+          "content_preview": "423. \n(Requirements for exercise of right of subrogation) \n \n- 105 – \n \n \n(1) \nIn order for an obligee to exercise the right provided for in \nArticle 422(Obligee's right of subrogation), the obligor h"
+        },
+        {
+          "article_number": 426,
+          "law_name": "Civil Code 2007",
+          "score": 17.24453419703907,
+          "content_preview": "426. \n(Effect of obligee's right of subrogation) \n \n(1) \nThe effect of an obligee's exercise of a right of subrogation \nregarding a right held by the obligor shall inure directly to the \nobligor. \n \n("
+        },
+        {
+          "article_number": 422,
+          "law_name": "Civil Code 2007",
+          "score": 17.16746548041428,
+          "content_preview": "422. \n(Obligee's right of subrogation) \n \n(1) \nAn obligee may, where necessary to preserve his claim, exercise \na right held by the obligor in place of the obligor. However, this shall \nnot apply to a"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 2.7,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 39,
+      "question": "How does the Civil Code handle real rights over property?",
+      "expected_articles": [
+        113,
+        114,
+        115
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 131,
+          "law_name": "Civil Code 2007",
+          "score": 15.967306943056878,
+          "content_preview": "131. \n(Statutory nature of real right) \n \nNo real right may be created except as permitted by this Code or under \nspecial law. A real right permitted under customary law shall be valid \nunder this Cod"
+        },
+        {
+          "article_number": 304,
+          "law_name": "Civil Code 2007",
+          "score": 14.797491200033699,
+          "content_preview": "304. \n(Extinctive prescription of part of easement) \n \nIf the easement holder does not exercise part of the easement, that part \nof the easement shall be extinguished by prescription."
+        },
+        {
+          "article_number": 136,
+          "law_name": "Civil Code 2007",
+          "score": 14.489960557865118,
+          "content_preview": "136. \n(Merger of rights) \n \n(1) \nWhere the ownership and other real rights created over one and \nthe same thing have become vested in a single person, such other real \nrights shall be extinguished.  H"
+        },
+        {
+          "article_number": 196,
+          "law_name": "Civil Code 2007",
+          "score": 14.230160689756417,
+          "content_preview": "196. \n(Prescriptive acquisition of rights regarding movable and other \nproperty rights) \n \nA person who peacefully and openly exercises for his own benefit a pledge, \nleasehold or other right regardin"
+        },
+        {
+          "article_number": 197,
+          "law_name": "Civil Code 2007",
+          "score": 14.121212957681793,
+          "content_preview": "197. (Mutatis mutandis application of provisions regarding \nprescriptive acquisition of immovables) \n \nThe provisions of Articles 163(Retroactive effect of prescriptive \nacquisition) through 177(Suspe"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.1,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 40,
+      "question": "What are the lessor's obligations toward the lessee?",
+      "expected_articles": [
+        597,
+        598,
+        599
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 604,
+          "law_name": "Civil Code 2007",
+          "score": 21.428281527627597,
+          "content_preview": "604. \n(Right of lessee to demand reimbursement of expenditures) \n \n(1) \nIf the lessee outlays any necessary expenditure that should be \nborne by the lessor, the lessee may immediately demand reimburse"
+        },
+        {
+          "article_number": 609,
+          "law_name": "Civil Code 2007",
+          "score": 21.321316591963164,
+          "content_preview": "609. \n(Sublease) \n \n(1) \nIf a lessee lawfully subleases the leased property, the sublessee \nshall assume the lease obligations directly vis-à-vis the lessor. An \nadvance payment to the sublessor canno"
+        },
+        {
+          "article_number": 611,
+          "law_name": "Civil Code 2007",
+          "score": 21.186319263976408,
+          "content_preview": "611. \n(Lessee’s duty to report) \n \nIf repairs are required to the leased property or a third party asserts \nany rights over it, the lessee shall report without delay to the lessor, \nexcept where the l"
+        },
+        {
+          "article_number": 605,
+          "law_name": "Civil Code 2007",
+          "score": 20.94669115799674,
+          "content_preview": "605. \n(Lessor’s liability for defects in leased property) \n \n(1) \nIf the lessee did not examine the leased property wether it is \nsuit to the condition mentioned in the written contract, when acceptin"
+        },
+        {
+          "article_number": 603,
+          "law_name": "Civil Code 2007",
+          "score": 20.35230022681308,
+          "content_preview": "603. \n(Preservative action by lessor) \n \n(1) \nThe lessee shall not obstruct any action by the lessor that is \nrequired to preserve the leased property. \n \n(2) \nIf the lessor proposes to take action to"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 2.8,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 41,
+      "question": "What is a guarantee contract under the Civil Code?",
+      "expected_articles": [
+        677,
+        678,
+        679
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 379,
+          "law_name": "Civil Code 2007",
+          "score": 17.314820073827878,
+          "content_preview": "379. \n(Definition) \n \n(1) \nThe parties to a contract can agree to confer a right or benefit \narising under the contract upon a third party. In this case, the person \nwho is to perform a duty under the"
+        },
+        {
+          "article_number": 2,
+          "law_name": "Civil Code 2007",
+          "score": 16.370927239756448,
+          "content_preview": "2. (Fundamental concepts) \n \nThis Code gives concrete embodiment to the concepts of the dignity of \nthe individual, the equality of the sexes and the guarantee of property \nrights provided in the Cons"
+        },
+        {
+          "article_number": 850,
+          "law_name": "Civil Code 2007",
+          "score": 16.076684851811034,
+          "content_preview": "850. \n(Right of reimbursement of a third party security provider) \n \nIf a person who creates a hypothec to secure the obligations of others \nperformed those obligations or have lost ownership of the h"
+        },
+        {
+          "article_number": 664,
+          "law_name": "Civil Code 2007",
+          "score": 15.971919101667213,
+          "content_preview": "664. \n(Contract of employment) \n \n(1) \nA contract of employment is formed by the promises of one party \nto perform services under employment, and another party to pay wages \nfor it. \n \n(2) \nThe party "
+        },
+        {
+          "article_number": 382,
+          "law_name": "Civil Code 2007",
+          "score": 15.379844118410581,
+          "content_preview": "382. \n(Defense of contract donor) \n \nA contract donor under a contract to confer a right or benefit on a third \nparty may assert against the third-party beneficiary any defenses \narising under the con"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.0,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 42,
+      "question": "What are the grounds for challenging an arbitral award in Cambodian courts?",
+      "expected_articles": [
+        44,
+        45,
+        46
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 21,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 23.567252639778335,
+          "content_preview": "Article 21: \nChallenge Procedure \n \nTo challenge the arbitrator, the parties shall comply with the following procedures: \n \n(1) \nthe parties are free to agree on a procedure for challenging an arbitra"
+        },
+        {
+          "article_number": 39,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 22.534579922072858,
+          "content_preview": "Article 39: \nForm and Content of Award \n \nThe arbitral tribunal form and content of award shall contain as follows: \n \n(1) \nThe award shall be made in writing and shall be signed by the arbitrator or "
+        },
+        {
+          "article_number": 44,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 22.34780033768208,
+          "content_preview": "Article 44:  \nApplication for Setting Aside as Exclusive Recourse Against Arbitral Award \n \nThe party may file an application for setting aside as exclusive recourse against arbitral award as \nfollows"
+        },
+        {
+          "article_number": 38,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 22.028908349164805,
+          "content_preview": "Article 38: \nSettlement \n \nUpon request by both parties, prior to commencement of formal arbitration proceedings, the \narbitral tribunal may confer with the parties for the purpose of exploring whethe"
+        },
+        {
+          "article_number": 41,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 21.947445842101555,
+          "content_preview": "Article 41: \nCorrection and Interpretation of Award; Additional Award \n \nThe correction and interpretation of award shall determine as follows: \n \n(1)  \nWithin thirty (30) days of the receipt of the a"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.3333,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.8,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 43,
+      "question": "What is a loan for consumption and what are the borrower's obligations?",
+      "expected_articles": [
+        695,
+        696,
+        697
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 590,
+          "law_name": "Civil Code 2007",
+          "score": 33.63152589678475,
+          "content_preview": "590. \n(Loan for consumption of defective things and lender’s warranty \nliability) \n \n(1) \nIn the case of a contract of loan for consumption with interest, \nif there is a hidden defect in any things de"
+        },
+        {
+          "article_number": 579,
+          "law_name": "Civil Code 2007",
+          "score": 32.4530999674697,
+          "content_preview": "579. \n(Formation of contract of loan for consumption) \n \nA contract of loan for consumption is formed by agreement of the lender \nand the borrower alone."
+        },
+        {
+          "article_number": 583,
+          "law_name": "Civil Code 2007",
+          "score": 31.18529115809069,
+          "content_preview": "583. \n(Claim for interest) \n \n(1) \n“Interest” refers to that amount of money or other things \ncalculated by multiplying a certain percentage by the number of things \nloaned and delivered to the borrow"
+        },
+        {
+          "article_number": 581,
+          "law_name": "Civil Code 2007",
+          "score": 30.395620918284582,
+          "content_preview": "581. \n(Termination for deterioration of borrower’s creditworthiness) \n \n(1) \nIf after the formation of a contract of loan for consumption but \nbefore delivery of the object thereof the economic situat"
+        },
+        {
+          "article_number": 578,
+          "law_name": "Civil Code 2007",
+          "score": 30.170888282233463,
+          "content_preview": "578. \n(Definition of loan for consumption) \n \nA loan for consumption is a contract whereby one party, called the lender, \nassumes an obligation to entrust the free use of money, foodstuffs, \npaddy or "
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.8,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 44,
+      "question": "How does the buyer's obligation to inspect goods work?",
+      "expected_articles": [
+        543,
+        544,
+        545
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 542,
+          "law_name": "Civil Code 2007",
+          "score": 22.76763548789497,
+          "content_preview": "542. \n(Buyer’s right to demand complete performance) \n \n(1) \nThe buyer may demand that the seller [fully and completely] \nperform its obligations. However, this shall not apply where the buyer \nhas re"
+        },
+        {
+          "article_number": 539,
+          "law_name": "Civil Code 2007",
+          "score": 21.873700870371408,
+          "content_preview": "539. \n(Obligation to deliver conforming goods) \n \n(1) \nThe seller has an obligation to deliver to the buyer goods that \nconform to the contract. \n \n(2) \nExcept where the parties have agreed otherwise,"
+        },
+        {
+          "article_number": 549,
+          "law_name": "Civil Code 2007",
+          "score": 21.47036900594995,
+          "content_preview": "549. \n(Duty to deliver goods) \n \n(1) \nThe seller shall have duty to deliver the goods to the buyer at \nthe time and the place provided for in the contract. \n- 134 – \n \n \n This is an unofficial transla"
+        },
+        {
+          "article_number": 551,
+          "law_name": "Civil Code 2007",
+          "score": 21.108700241361035,
+          "content_preview": "551. \n(Defenses of simultaneous performance, insecurity) \n \n(1) \nThe seller may refuse to transfer of the right  or to deliver the \ngoods until the buyer tenders payment of the purchase price. However"
+        },
+        {
+          "article_number": 559,
+          "law_name": "Civil Code 2007",
+          "score": 20.49561552319851,
+          "content_preview": "559. \n(Delayed Receipt) \n \n(1) \nIn the event of a delay in the performance of the buyer's \nobligation to receive the goods, the seller may demand compensation for \ndamages or terminate the contract in"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.3,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 45,
+      "question": "What is the principle of private autonomy in Cambodian law?",
+      "expected_articles": [
+        3,
+        4
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 3,
+          "law_name": "Civil Code 2007",
+          "score": 32.608121837373474,
+          "content_preview": "3. (The principle of private autonomy) \n \nUnder this Code, legal relations among private persons, including \ncorporations, shall be equal and equivalent, with respect for the free \nintention of the in"
+        },
+        {
+          "article_number": 48,
+          "law_name": "Civil Code 2007",
+          "score": 22.095249630154736,
+          "content_preview": "48. (Foreign juristic persons) \n \n(1) \nIn this law, juristic persons incorporated under foreign law are \nreferred to as “foreign juristic persons”. \n \n(2) \nForeign juristic persons are not recognized "
+        },
+        {
+          "article_number": 1181,
+          "law_name": "Civil Code 2007",
+          "score": 19.30297418155466,
+          "content_preview": "1181. (Special provision governing making of will by Cambodian living \nabroad) \n \nIf a Cambodian national who is resident in a country where a Cambodian \nConsul is stationed wishes to make a will by n"
+        },
+        {
+          "article_number": 317,
+          "law_name": "Civil Code 2007",
+          "score": 17.455170201528595,
+          "content_preview": "317. \n(Monetary obligation in foreign currency) \n \n  \n(1) \nEven if the amount of an obligation is established in a foreign \ncurrency, the obligor may effect payment in Cambodian currency based \non the"
+        },
+        {
+          "article_number": 1155,
+          "law_name": "Civil Code 2007",
+          "score": 16.670090308724216,
+          "content_preview": "1155. (Case where the successor, etc. is an alien) \n \n(1) \nIf the successor or person acquiring property under a will does \nnot hold Cambodian nationality, such person shall be unable to succeed \nto l"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.5,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.3,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 46,
+      "question": "What are the natural and legal persons recognized by the Civil Code?",
+      "expected_articles": [
+        6,
+        7,
+        8
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 48,
+          "law_name": "Civil Code 2007",
+          "score": 22.626051106769506,
+          "content_preview": "48. (Foreign juristic persons) \n \n(1) \nIn this law, juristic persons incorporated under foreign law are \nreferred to as “foreign juristic persons”. \n \n(2) \nForeign juristic persons are not recognized "
+        },
+        {
+          "article_number": 5,
+          "law_name": "Civil Code 2007",
+          "score": 22.023897104139245,
+          "content_preview": "5. (The principle of good faith) \n \nRights shall be exercised and duties performed in good faith. \n \n \nBOOK TWO “PERSONS” \n \nChapter One NATURAL PERSONS \n \nSection I. Legal Capacity"
+        },
+        {
+          "article_number": 6,
+          "law_name": "Civil Code 2007",
+          "score": 21.439614866545135,
+          "content_preview": "6. (Principle of equality of legal capacity) \n \nAll natural persons are entitled to have rights and assume obligations \nin their name."
+        },
+        {
+          "article_number": 14,
+          "law_name": "Civil Code 2007",
+          "score": 21.273353095319738,
+          "content_preview": "14. (Lack of capacity) \n- 10 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording, and \ncould lack some information. It is provided for informa"
+        },
+        {
+          "article_number": 15,
+          "law_name": "Civil Code 2007",
+          "score": 21.143040524113456,
+          "content_preview": "15. (Definition of act) \n \nAn 'act' as used in the provisions of Sections III, IV and VI of this \nChapter shall include a contract, and a unilateral legal act. \n \nSection IV. Capacity to Act"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.3333,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.7,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 47,
+      "question": "What is the obligation to deliver specific property?",
+      "expected_articles": [
+        314,
+        315
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 314,
+          "law_name": "Civil Code 2007",
+          "score": 22.248099854977944,
+          "content_preview": "314. \n(Obligation to deliver specific property) \n \nIf the subject matter of an obligation comprises delivery of a specific \nproperty, the obligor shall preserve such property with the care of a \ngood "
+        },
+        {
+          "article_number": 445,
+          "law_name": "Civil Code 2007",
+          "score": 22.14589292300176,
+          "content_preview": "445. \n(Place of performance) \n \nWhere the place of performance is not agreed to between the parties, \nperformance of an obligation to deliver specific property shall be made \nat the place where the pr"
+        },
+        {
+          "article_number": 315,
+          "law_name": "Civil Code 2007",
+          "score": 20.53902311985187,
+          "content_preview": "315. \n(Obligation to deliver property in species) \n \n(1) \nWhere the property to be delivered under an obligation is \ndescribed only  with reference to its class or type, if different levels \nof qualit"
+        },
+        {
+          "article_number": 809,
+          "law_name": "Civil Code 2007",
+          "score": 18.848690335587257,
+          "content_preview": "809. (Effect of general statutory lien) \n \n(1) \nHolders of a general statutory lien cannot be paid out of immovable \nproperties unless they are first paid out of property other than \nimmovable propert"
+        },
+        {
+          "article_number": 396,
+          "law_name": "Civil Code 2007",
+          "score": 16.993254788315713,
+          "content_preview": "396. \n(Court order for specific performance) \n \nWhere an obligor does not voluntarily perform an obligation, the obligee \nmay seek an order of specific performance from the court, except where \nthe na"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 1.0,
+      "precision_at_k": 0.4,
+      "latency_ms": 2.8,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 48,
+      "question": "When does a contract become void due to a mistake?",
+      "expected_articles": [
+        30,
+        31,
+        32
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 769,
+          "law_name": "Civil Code 2007",
+          "score": 19.362145986343,
+          "content_preview": "769. (Subordinate nature of real security right) \n \n(1) \nA real security right is established in order to secure an existing \ndebt. A real security right may also be established in order to secure \na "
+        },
+        {
+          "article_number": 958,
+          "law_name": "Civil Code 2007",
+          "score": 19.17359647608513,
+          "content_preview": "958. \n(Nullity of marriage) \n \nA marriage shall be treated as void only in the following cases: \na) \nWhere there is no intention to marry common to the parties \non account of mistake as to the identit"
+        },
+        {
+          "article_number": 355,
+          "law_name": "Civil Code 2007",
+          "score": 19.122451699149376,
+          "content_preview": "355. \n (Initial impossibility) \n \n(1) \nEven where it was impossible to implement the content of a contract \n- 89 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes "
+        },
+        {
+          "article_number": 374,
+          "law_name": "Civil Code 2007",
+          "score": 17.873911512753235,
+          "content_preview": "374. \n(Defective act of agency) \n \n(1) \nWhere the validity of a contract made by the person who makes \ndeclaration of intention may be affected on the grounds of mistake, \nfraud, or duress, or the kno"
+        },
+        {
+          "article_number": 323,
+          "law_name": "Civil Code 2007",
+          "score": 17.646734634022657,
+          "content_preview": "323. \n(Determination of irregular obligation when performance \nimpossible) \n- 81 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording, and \ncou"
+        }
+      ],
+      "hit_at_k": false,
+      "recall_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "latency_ms": 3.0,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 49,
+      "question": "What is a monetary obligation and what is the legal interest rate?",
+      "expected_articles": [
+        316,
+        318
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 399,
+          "law_name": "Civil Code 2007",
+          "score": 32.04332497163095,
+          "content_preview": "399. \n(Special rules for monetary obligations) \n \n- 99 – \n \n \n This is an unofficial translation of the Law. It contains translation mistakes and incoherent wording, and \ncould lack some information. "
+        },
+        {
+          "article_number": 585,
+          "law_name": "Civil Code 2007",
+          "score": 26.94055387577778,
+          "content_preview": "585. \n(Limitations on interest) \n \n(1) \nThe maximum interest rate refers to the upper limit on the interest \nrate that may be legally agreed by the parties, as provided by law or \nordinances. \n- 142 –"
+        },
+        {
+          "article_number": 584,
+          "law_name": "Civil Code 2007",
+          "score": 26.94037573233686,
+          "content_preview": "584. \n(Legal interest rate9 and agreed-on interest rate) \n \n(1) \nThe interest rate shall be that provided by law or by agreement \nof the parties. \n \n(2) \nIf the parties have agreed to the payment of i"
+        },
+        {
+          "article_number": 591,
+          "law_name": "Civil Code 2007",
+          "score": 25.729484228611632,
+          "content_preview": "591. \n(Borrower’s obligation to return) \n \n(1) \nThe borrower has an obligation to return, on the return date, \nthings of the same type, quality and quantity as those received by \ndelivery from the len"
+        },
+        {
+          "article_number": 318,
+          "law_name": "Civil Code 2007",
+          "score": 24.80713626166775,
+          "content_preview": "318. \n(Legal interest rate) \n \nWith respect to an interest-bearing obligation, the interest rate shall \nbe 5 % per annum, unless otherwise agreed to between the parties."
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.5,
+      "precision_at_k": 0.2,
+      "latency_ms": 3.4,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 50,
+      "question": "What is liquidated damages in a contract?",
+      "expected_articles": [
+        403,
+        404
+      ],
+      "expected_law": "Civil Code 2007",
+      "retrieved_articles": [
+        {
+          "article_number": 403,
+          "law_name": "Civil Code 2007",
+          "score": 22.526797821759818,
+          "content_preview": "403. \n(Liquidated damages, etc.) \n \n(1) \nThe obligor and obligee may separately and in advance establish \nconditions for the payment of damages and an amount to be paid. \n \n(2) \nA special agreement ex"
+        },
+        {
+          "article_number": 66,
+          "law_name": "Civil Code 2007",
+          "score": 18.000879839838724,
+          "content_preview": "66. (Cases where a juristic person should be liquidated and liquidators) \n \nWhere a juristic person is liquidated, except in cases under Article \n64(Grounds for dissolution) Paragraph (1) Item (c), it"
+        },
+        {
+          "article_number": 664,
+          "law_name": "Civil Code 2007",
+          "score": 12.7949814463257,
+          "content_preview": "664. \n(Contract of employment) \n \n(1) \nA contract of employment is formed by the promises of one party \nto perform services under employment, and another party to pay wages \nfor it. \n \n(2) \nThe party "
+        },
+        {
+          "article_number": 659,
+          "law_name": "Civil Code 2007",
+          "score": 12.565794019197696,
+          "content_preview": "659. \n(Principal’s right to demand damages) \n \n(1) \nIn lieu of, or in addition to exercising his rights provided in \nArticles 655(Demand for subsequent completion) through 658(Right of \nprincipal to d"
+        },
+        {
+          "article_number": 663,
+          "law_name": "Civil Code 2007",
+          "score": 12.550649165102568,
+          "content_preview": "663. \n(Principal’s right of termination while work is uncompleted) \n \nSo long as the contractor has not completed the work, the principal may \nterminate the contract at any time by paying damages. \n \n"
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.5,
+      "precision_at_k": 0.2,
+      "latency_ms": 2.4,
+      "ragas_metrics": {},
+      "generated_answer": null
+    },
+    {
+      "question_id": 51,
+      "question": "How does the arbitration procedure start under Cambodian law?",
+      "expected_articles": [
+        26,
+        27,
+        28
+      ],
+      "expected_law": "Law on Commercial Arbitration 2006",
+      "retrieved_articles": [
+        {
+          "article_number": 6,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 18.876352559087387,
+          "content_preview": "Article 6 of this Law to take a necessary measure for any of the following: \n \n(a)    \na party fails to act as required under such procedure, or \n \n(b) \nthe parties, or two (2) arbitrators, are unable"
+        },
+        {
+          "article_number": 27,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 17.35546335783476,
+          "content_preview": "Article 27: \nDetermination of Rules of Procedure \n \nThe parties are free to agree or disagree on the procedure to be followed by the arbitral tribunal in \nconducting the proceedings. \n \nFailing such a"
+        },
+        {
+          "article_number": 21,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 16.91859163519168,
+          "content_preview": "Article 21: \nChallenge Procedure \n \nTo challenge the arbitrator, the parties shall comply with the following procedures: \n \n(1) \nthe parties are free to agree on a procedure for challenging an arbitra"
+        },
+        {
+          "article_number": 19,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 15.896056102723671,
+          "content_preview": "Article 19: \nAppointment of Arbitrators \n \nThe appointment of arbitrator shall determine as follows: \n \n(1) \nno person shall be precluded by reason of his nationality from acting as an arbitrator, unl"
+        },
+        {
+          "article_number": 46,
+          "law_name": "Law on Commercial Arbitration 2006",
+          "score": 14.232777649224648,
+          "content_preview": "Article 46:   \nGrounds for Refusing Recognition or Enforcement \n \nRecognition or enforcement of an arbitral award, irrespective of the country in which it was made, \nmay be refused only: \n \n(1)   \nAt "
+        }
+      ],
+      "hit_at_k": true,
+      "recall_at_k": 0.3333,
+      "precision_at_k": 0.2,
+      "latency_ms": 2.9,
+      "ragas_metrics": {},
+      "generated_answer": null
+    }
+  ]
+}

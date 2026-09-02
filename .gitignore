@@ -1,0 +1,54 @@
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Data files (keep directory structure, ignore contents)
+data/01_raw/**/*.pdf
+data/02_extracted/**/*.txt
+data/02_extracted/**/*.json
+data/03_cleaned/**/*.txt
+data/03_cleaned/**/*.json
+data/04_chunks/**/*.json
+data/04_chunks/**/*.jsonl
+data/indices/
+
+# Keep .gitkeep files
+!**/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite3
+
+# PyTorch / ML model cache
+*.pt
+*.bin
+*.safetensors
+
+# Jupyter
+.ipynb_checkpoints/

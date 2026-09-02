@@ -1,0 +1,359 @@
+[
+  {
+    "question": "What are the essential elements required to form a valid contract under the Cambodian Civil Code?",
+    "expected_articles": [336, 337, 340],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Formation of Contract",
+    "reference_answer": "Under the Cambodian Civil Code, a contract is formed by an offer and an acceptance. The offer must be definite and communicated, and acceptance must be unconditional and received by the offeror."
+  },
+  {
+    "question": "What is the principle of good faith in Cambodian civil law?",
+    "expected_articles": [5],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "General Principles",
+    "reference_answer": "The Cambodian Civil Code imposes a duty of good faith on all parties in the exercise of private rights and the performance of duties."
+  },
+  {
+    "question": "What are the remedies when a seller delivers goods with a defect?",
+    "expected_articles": [519, 520, 526],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Sale",
+    "reference_answer": "When goods contain a defect, the buyer may demand repair, replacement, price reduction, or rescission depending on the nature of the defect."
+  },
+  {
+    "question": "How is an offer revoked under the Cambodian Civil Code?",
+    "expected_articles": [338, 339],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Formation of Contract",
+    "reference_answer": "An offer may be revoked before the offeree dispatches an acceptance, unless the offer specifies a period for acceptance or states it is irrevocable."
+  },
+  {
+    "question": "What are the legal requirements for a valid arbitration agreement?",
+    "expected_articles": [7],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Arbitration Agreement",
+    "reference_answer": "An arbitration agreement must be in writing. It may be contained in a contract clause or a separate agreement and must cover disputes arising from a defined legal relationship."
+  },
+  {
+    "question": "Can an arbitral tribunal rule on its own jurisdiction?",
+    "expected_articles": [24, 25],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Jurisdiction of Arbitral Tribunal",
+    "reference_answer": "Yes, the arbitral tribunal has the power (kompetenz-kompetenz) to rule on its own jurisdiction including any objection to the existence or validity of the arbitration agreement."
+  },
+  {
+    "question": "What is an obligation under the Cambodian Civil Code?",
+    "expected_articles": [308],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "General Provisions on Obligations",
+    "reference_answer": "An obligation is a legal relationship connecting a party who is obligated to perform an act (the obligor) to a party who may demand that performance (the obligee)."
+  },
+  {
+    "question": "What are the remedies for non-performance of a contract?",
+    "expected_articles": [395, 396, 399],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Non-Performance of Obligation",
+    "reference_answer": "Remedies for non-performance include demand for performance, reduction of consideration, rescission, and damages for losses caused."
+  },
+  {
+    "question": "When is a contract void for violating public order or good morals?",
+    "expected_articles": [354],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Validity of Juridical Acts",
+    "reference_answer": "A contract is void if its purpose or content violates mandatory law, public order, or good morals, even if the object of the individual act is itself permissible."
+  },
+  {
+    "question": "How are damages calculated for breach of contract?",
+    "expected_articles": [399, 401, 403],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Damages",
+    "reference_answer": "Damages for breach of contract cover ordinary foreseeable losses. Special damages may also be recoverable if the breaching party knew of the special circumstances causing them."
+  },
+  {
+    "question": "What is the arbitral award recognition process under Cambodian law?",
+    "expected_articles": [41, 42, 44],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Recognition and Enforcement",
+    "reference_answer": "An arbitral award must be recognized by a competent court. A party may apply for enforcement, and the court may refuse only on the specific grounds enumerated in the law."
+  },
+  {
+    "question": "What grounds exist to set aside an arbitral award in Cambodia?",
+    "expected_articles": [44, 46],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Setting Aside Arbitral Award",
+    "reference_answer": "An arbitral award may be set aside if the arbitration agreement was invalid, a party could not present its case, the award exceeds the arbitration mandate, or the award is contrary to public policy."
+  },
+  {
+    "question": "What is legal capacity to perform juridical acts?",
+    "expected_articles": [17, 18, 20],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Persons",
+    "reference_answer": "Legal capacity is the ability to independently perform valid juridical acts. Minors and persons under guardianship have limited capacity and require a representative for significant transactions."
+  },
+  {
+    "question": "How is a lease contract terminated in Cambodia?",
+    "expected_articles": [615, 616, 617],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Lease",
+    "reference_answer": "A lease may be terminated by expiry of term, mutual agreement, or notice. Cancellation notice periods depend on the type of property and whether a term is fixed."
+  },
+  {
+    "question": "What is unjust enrichment under Cambodian civil law?",
+    "expected_articles": [727, 728, 729],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Unjust Enrichment",
+    "reference_answer": "Unjust enrichment arises when a person gains a benefit at another's expense without legal justification. The enriched person must return the benefit to the person who suffered the loss."
+  },
+  {
+    "question": "What constitutes a tort under Cambodian civil law?",
+    "expected_articles": [735, 736, 740],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Torts",
+    "reference_answer": "A tort is an intentional or negligent act causing harm to another. The person who committed the tort is obligated to compensate the injured party for the resulting loss."
+  },
+  {
+    "question": "How is an agency relationship created under Cambodian civil law?",
+    "expected_articles": [362, 363, 365],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Agency",
+    "reference_answer": "Agency arises when a principal grants authority to an agent to act on the principal's behalf. Acts performed by the agent within the scope of that authority bind the principal."
+  },
+  {
+    "question": "What is an interim measure in arbitration and who can grant it?",
+    "expected_articles": [33, 34],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Interim Measures",
+    "reference_answer": "The arbitral tribunal may at a party's request grant interim measures, such as preserving assets or maintaining the status quo, pending the final award."
+  },
+  {
+    "question": "What is the difference between void and voidable contracts?",
+    "expected_articles": [341, 345, 354],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Validity of Juridical Acts",
+    "reference_answer": "A void contract has no legal effect from the outset. A voidable contract is valid until the entitled party rescinds it, e.g., due to fraud, duress, or mistake."
+  },
+  {
+    "question": "What happens if the subject matter of a contract becomes impossible to perform?",
+    "expected_articles": [392, 393],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Impossibility of Performance",
+    "reference_answer": "If performance becomes impossible due to circumstances beyond the obligor's control, the obligation is extinguished. If caused by the obligor's fault, liability for damages remains."
+  },
+  {
+    "question": "How is the composition of an arbitral tribunal determined?",
+    "expected_articles": [14, 15, 16],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Composition of Arbitral Tribunal",
+    "reference_answer": "Parties may agree on the number of arbitrators. Failing agreement, three arbitrators are appointed. Each party appoints one, and the two party-appointed arbitrators appoint the presiding arbitrator."
+  },
+  {
+    "question": "What is set-off and when can it be exercised?",
+    "expected_articles": [429, 430, 431],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Set-Off",
+    "reference_answer": "Set-off allows a party to extinguish mutual debts up to the smaller amount. It requires that both obligations are due, of the same kind, and in certain amounts."
+  },
+  {
+    "question": "What are the arbitration tribunal's powers regarding evidence?",
+    "expected_articles": [29, 30],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Conduct of Arbitral Proceedings",
+    "reference_answer": "The arbitral tribunal may order production of evidence, appoint experts, and decide on the admissibility and weight of evidence presented by the parties."
+  },
+  {
+    "question": "How does the Civil Code handle duress in contract formation?",
+    "expected_articles": [33, 34, 35],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Defects in Intention",
+    "reference_answer": "A juridical act made under duress — unlawful threat leaving the victim no reasonable alternative — is voidable at the option of the coerced party."
+  },
+  {
+    "question": "What is a usufruct under the Cambodian Civil Code?",
+    "expected_articles": [215, 216, 217],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Usufruct",
+    "reference_answer": "A usufruct is a real right to use and enjoy the fruits of another person's property without impairing its substance. It may be created for a term or for the life of the usufructuary."
+  },
+  {
+    "question": "What is the scope of arbitrability under the Law on Commercial Arbitration?",
+    "expected_articles": [1, 2, 3],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "General Provisions",
+    "reference_answer": "Commercial arbitration applies to disputes arising from commercial relationships. Matters exclusively reserved for courts, such as criminal or family-status matters, are not arbitrable."
+  },
+  {
+    "question": "How is inheritance determined under the Cambodian Civil Code?",
+    "expected_articles": [1008, 1009, 1010],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Succession",
+    "reference_answer": "Inheritance passes first to the deceased's lineal descendants (children), then parents, then siblings, and more distant relatives, in a statutory order of priority."
+  },
+  {
+    "question": "What is the effect of assignment of a claim?",
+    "expected_articles": [447, 448, 449],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Assignment of Claims",
+    "reference_answer": "Assignment transfers the obligee's claim to a third party. The obligor must be notified; once notified, the obligor may only discharge the debt by paying the assignee."
+  },
+  {
+    "question": "What is novation and what effect does it have on a contract?",
+    "expected_articles": [443, 444],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Novation",
+    "reference_answer": "Novation extinguishes an existing obligation and replaces it with a new one. Accessory obligations such as guarantees and pledges are also extinguished unless preserved by agreement."
+  },
+  {
+    "question": "What are the obligations of a mandatory under a mandate contract?",
+    "expected_articles": [673, 674, 675],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Mandate",
+    "reference_answer": "A mandatory must perform the mandate as instructed, exercise due care, account for all acts performed, and deliver any proceeds or property received to the mandator."
+  },
+  {
+    "question": "How is a contract formed by offer and acceptance under the Civil Code?",
+    "expected_articles": [336, 337],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Formation of Contract",
+    "reference_answer": "A contract is formed when the offeree sends an acceptance that matches the offer. An offer is a definite indication of willingness to be bound upon acceptance."
+  },
+  {
+    "question": "What is the legal definition of a contract under the Civil Code?",
+    "expected_articles": [311],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Juridical Acts",
+    "reference_answer": "A contract is the matching of intentions held by two or more parties aimed at bringing about a definite legal effect."
+  },
+  {
+    "question": "What is the extinctive prescription period for claims?",
+    "expected_articles": [468, 469, 470],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Extinctive Prescription",
+    "reference_answer": "The general extinctive prescription period is 10 years unless special provisions apply. Claims extinguish when not exercised within the statutory period."
+  },
+  {
+    "question": "What is the effect of fraud on a juridical act?",
+    "expected_articles": [36, 37],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Defects in Intention",
+    "reference_answer": "A juridical act induced by fraud is voidable. The deceived party may rescind the act if the other party or a third party committed the fraud."
+  },
+  {
+    "question": "What constitutes a mortgage under the Cambodian Civil Code?",
+    "expected_articles": [263, 264, 265],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Mortgage",
+    "reference_answer": "A mortgage is a real security interest over immovable property. The mortgagee has a preferential right to satisfaction from the proceeds of the mortgaged property in case of default."
+  },
+  {
+    "question": "What are the rights of joint obligors?",
+    "expected_articles": [421, 422, 423],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Joint Obligations",
+    "reference_answer": "When multiple obligors bear joint liability, the obligee may demand full performance from any one of them. The performing obligor may seek contribution from the others for their share."
+  },
+  {
+    "question": "What are the parties' rights when conditions precedent are not fulfilled?",
+    "expected_articles": [325, 326, 327],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Conditional Obligations",
+    "reference_answer": "A condition precedent is an event that must occur before the obligation arises. If the condition fails to occur, the obligation never comes into existence and advance payments must be returned."
+  },
+  {
+    "question": "What is subrogation of an obligee's rights?",
+    "expected_articles": [458, 459, 460],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Subrogation",
+    "reference_answer": "Subrogation allows a third party who discharges an obligation to step into the obligee's shoes and exercise the same rights against the obligor."
+  },
+  {
+    "question": "How does the Civil Code handle real rights over property?",
+    "expected_articles": [113, 114, 115],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Real Rights",
+    "reference_answer": "Real rights are rights over property enforceable against the world (erga omnes). The Civil Code recognizes ownership, superficies, farmland, easement, usufruct, mortgage, and pledge as real rights."
+  },
+  {
+    "question": "What are the lessor's obligations toward the lessee?",
+    "expected_articles": [597, 598, 599],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Lease",
+    "reference_answer": "The lessor must deliver the property in a condition fit for use and maintain it throughout the lease. The lessor must ensure the lessee's quiet enjoyment of the leased property."
+  },
+  {
+    "question": "What is a guarantee contract under the Civil Code?",
+    "expected_articles": [677, 678, 679],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Guarantee",
+    "reference_answer": "A guarantee is a contract in which a guarantor agrees to perform the obligation of a principal debtor when that debtor defaults. It must generally be in writing."
+  },
+  {
+    "question": "What are the grounds for challenging an arbitral award in Cambodian courts?",
+    "expected_articles": [44, 45, 46],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Recourse Against Award",
+    "reference_answer": "An award may be challenged if the arbitration agreement was invalid, a party was denied the opportunity to present their case, the tribunal exceeded its mandate, or the award contravenes public policy."
+  },
+  {
+    "question": "What is a loan for consumption and what are the borrower's obligations?",
+    "expected_articles": [695, 696, 697],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Loan for Consumption",
+    "reference_answer": "A loan for consumption transfers ownership of fungible items to the borrower. The borrower must return equivalent goods of the same kind, quality, and quantity at the agreed time."
+  },
+  {
+    "question": "How does the buyer's obligation to inspect goods work?",
+    "expected_articles": [543, 544, 545],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Sale",
+    "reference_answer": "The buyer must promptly inspect goods after delivery. If a defect is not notified to the seller within a reasonable time after discovery, the buyer loses the right to rely on that defect."
+  },
+  {
+    "question": "What is the principle of private autonomy in Cambodian law?",
+    "expected_articles": [3, 4],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "General Principles",
+    "reference_answer": "Under the principle of private autonomy, parties are free to determine the content of their legal relations through their own will, within the limits of law, public order, and good morals."
+  },
+  {
+    "question": "What are the natural and legal persons recognized by the Civil Code?",
+    "expected_articles": [6, 7, 8],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Persons",
+    "reference_answer": "The Civil Code recognizes natural persons and legal persons (entities). All natural persons enjoy equal legal capacity from birth to death. Legal persons acquire capacity from formation."
+  },
+  {
+    "question": "What is the obligation to deliver specific property?",
+    "expected_articles": [314, 315],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Types of Obligations",
+    "reference_answer": "The obligation to deliver specific property requires the obligor to deliver the exact identified item. The obligor must preserve it with due care until delivery."
+  },
+  {
+    "question": "When does a contract become void due to a mistake?",
+    "expected_articles": [30, 31, 32],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Defects in Intention",
+    "reference_answer": "A party who made a juridical act based on a material mistake may rescind the act if the other party knew or should have known of the mistake and if the mistake is fundamental."
+  },
+  {
+    "question": "What is a monetary obligation and what is the legal interest rate?",
+    "expected_articles": [316, 318],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Types of Obligations",
+    "reference_answer": "A monetary obligation requires payment of a sum of money. The legal interest rate applies where parties have not agreed on a rate, as set by the applicable regulations."
+  },
+  {
+    "question": "What is liquidated damages in a contract?",
+    "expected_articles": [403, 404],
+    "expected_law": "Civil Code 2007",
+    "chapter_hint": "Damages",
+    "reference_answer": "Liquidated damages are a pre-agreed sum that the obligor must pay in case of non-performance or delay. The court may reduce an excessively high liquidated damages clause."
+  },
+  {
+    "question": "How does the arbitration procedure start under Cambodian law?",
+    "expected_articles": [26, 27, 28],
+    "expected_law": "Law on Commercial Arbitration 2006",
+    "chapter_hint": "Conduct of Arbitral Proceedings",
+    "reference_answer": "Arbitral proceedings commence when a party delivers a written request for arbitration to the other party. The proceedings are conducted according to agreed or tribunal-determined rules."
+  }
+]
