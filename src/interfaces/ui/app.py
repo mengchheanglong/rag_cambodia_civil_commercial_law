@@ -6,6 +6,7 @@ Launch with:
 streamlit run src/interfaces/ui/app.py
 """
 
+import os
 import sys
 from pathlib import Path
 
@@ -15,6 +16,15 @@ if str(repo_root) not in sys.path:
     sys.path.insert(0, str(repo_root))
 
 import streamlit as st
+
+# Sync Streamlit Cloud secrets into environment if present
+try:
+    if hasattr(st, "secrets"):
+        for k, v in st.secrets.items():
+            if isinstance(v, str):
+                os.environ[k] = v.strip().strip('"').strip("'")
+except Exception:
+    pass
 
 from src.application.dtos import LegalQARequest, RetrievalRequest
 from src.interfaces.api.dependencies import get_hybrid_retriever, get_qa_use_case
@@ -36,7 +46,7 @@ st.caption(
 with st.sidebar:
     st.header("⚙️ Model & Search Config")
 
-    # LLM Model Selector (DeepSeek Flash vs Pro)
+    # LLM Model Selector (DeepSeek Flash vs Pro vs OpenAI)
     model_options = {
         "⚡ DeepSeek V3 / Flash (Fast & Efficient)": "deepseek-chat",
         "🧠 DeepSeek R1 / Pro (Deep Legal Reasoning)": "deepseek-reasoner",
@@ -54,8 +64,8 @@ with st.sidebar:
     api_key_input = st.text_input(
         "API Key (DeepSeek / OpenAI):",
         type="password",
-        placeholder="sk-... (optional if set in .env)",
-        help="Leave empty to use the key from your .env file or Streamlit secrets.",
+        placeholder="sk-... (or set in Streamlit Secrets)",
+        help="Paste your DeepSeek API key (or OpenAI key if using GPT-4o).",
     )
 
     st.divider()
@@ -115,11 +125,25 @@ with tab_qa:
                 try:
                     qa_use_case = get_qa_use_case()
 
-                    # Apply dynamic API key if provided
-                    if api_key_input.strip() and hasattr(qa_use_case._llm, "_client"):
+                    # Apply dynamic or secrets API key if provided
+                    clean_key = (
+                        api_key_input.strip()
+                        or os.environ.get("DEEPSEEK_API_KEY", "")
+                        or os.environ.get("OPENAI_API_KEY", "")
+                    ).strip().strip('"').strip("'")
+
+                    if clean_key and hasattr(qa_use_case._llm, "_client"):
                         from openai import OpenAI
-                        base_url = "https://api.deepseek.com" if "deepseek" in selected_model else None
-                        qa_use_case._llm._client = OpenAI(api_key=api_key_input.strip(), base_url=base_url)
+                        is_openai_key = clean_key.startswith("sk-proj-")
+                        if is_openai_key or "gpt-" in selected_model:
+                            base_url = None
+                        elif "deepseek" in selected_model:
+                            base_url = "https://api.deepseek.com"
+                        else:
+                            base_url = None
+
+                        qa_use_case._llm._client = OpenAI(api_key=clean_key, base_url=base_url)
+                        qa_use_case._llm._api_key = clean_key
 
                     req = LegalQARequest(
                         question=user_query,
@@ -163,19 +187,36 @@ with tab_qa:
                     st.warning(f"⚖️ **Legal Disclaimer**: {response.disclaimer}")
 
                 except Exception as e:
-                    # If API key is not configured, show retrieval results
-                    st.error(f"Generation error: {e}")
-                    st.info("Showing retrieved source articles directly below:")
+                    error_msg = str(e)
+                    st.error(f"Generation error: {error_msg}")
+
+                    if "401" in error_msg or "authentication" in error_msg.lower():
+                        st.info(
+                            """
+                            💡 **How to resolve this 401 Authentication Error**:
+                            - If you are using **DeepSeek Flash / Pro**:
+                              1. Get a valid key from [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys).
+                              2. Ensure your account has top-up balance.
+                              3. Paste the key in the **API Key** box on the sidebar.
+                            - If you are using an **OpenAI key** (starts with `sk-proj-...`):
+                              1. In the sidebar dropdown, switch the model to **🤖 OpenAI GPT-4o** or **⚡ OpenAI GPT-4o-mini**.
+                            """
+                        )
+
+                    st.markdown("---")
+                    st.markdown("### 📚 Retrieved Statutory Context Articles:")
                     retriever = get_hybrid_retriever()
                     docs = retriever.execute(
                         RetrievalRequest(query=user_query, top_k=top_k, law_filter=law_filter)
                     )
                     for doc in docs:
-                        st.markdown(
-                            f"**{doc.chunk.metadata.law_name} — Article {doc.chunk.metadata.article_number}**"
-                        )
-                        st.write(doc.chunk.content)
-                        st.divider()
+                        with st.container(border=True):
+                            st.markdown(
+                                f"**{doc.chunk.metadata.law_name} — Article {doc.chunk.metadata.article_number}**"
+                            )
+                            if doc.chunk.metadata.chapter:
+                                st.caption(f"Context: {doc.chunk.metadata.chapter}")
+                            st.write(doc.chunk.content)
 
 # Tab 2: Statutory Search
 with tab_search:

@@ -5,6 +5,7 @@ Implements LLMPort using OpenAI-compatible API standard:
 - Supports DeepSeek Chat (Flash / V3 / V4 fast mode) via 'deepseek-chat'
 - Supports DeepSeek Reasoner (Pro / R1 reasoning mode) via 'deepseek-reasoner'
 - Supports OpenAI models ('gpt-4o', 'gpt-4o-mini')
+- Auto-detects key format (sk-proj-... for OpenAI vs sk-... for DeepSeek)
 - Enforces statutory context grounding and article citation rules.
 """
 
@@ -41,31 +42,40 @@ class OpenAILLM(LLMPort):
     ) -> None:
         self._settings = settings or get_settings()
 
-        # Determine effective API key
-        self._api_key = (
+        # Determine effective API key and strip accidental quotes / whitespace
+        raw_key = (
             api_key
             or self._settings.deepseek_api_key
             or self._settings.llm_api_key
             or self._settings.openai_api_key
         )
+        self._api_key = raw_key.strip().strip('"').strip("'") if raw_key else ""
+
+        # Auto-detect key type
+        is_openai_project_key = bool(self._api_key and self._api_key.startswith("sk-proj-"))
 
         # Determine effective Base URL
         if base_url:
             self._base_url = base_url
+        elif is_openai_project_key:
+            self._base_url = None  # OpenAI default
         elif self._settings.deepseek_api_key or self._settings.llm_provider == "deepseek":
             self._base_url = self._settings.deepseek_base_url or "https://api.deepseek.com"
         elif self._settings.llm_base_url:
             self._base_url = self._settings.llm_base_url
         else:
-            self._base_url = None  # default OpenAI endpoint
+            self._base_url = None
 
         # Determine effective model
-        self._model = (
-            model
-            or (self._settings.deepseek_model if self._settings.deepseek_api_key else None)
-            or self._settings.llm_model
-            or self._settings.openai_llm_model
-        )
+        if is_openai_project_key and not model:
+            self._model = self._settings.openai_llm_model or "gpt-4o"
+        else:
+            self._model = (
+                model
+                or (self._settings.deepseek_model if self._settings.deepseek_api_key else None)
+                or self._settings.llm_model
+                or self._settings.openai_llm_model
+            )
         self._temperature = self._settings.llm_temperature
 
         if not self._api_key:
@@ -104,7 +114,7 @@ class OpenAILLM(LLMPort):
         """
         if not self._client:
             raise GenerationError(
-                "LLM client is not initialized. Please set DEEPSEEK_API_KEY or OPENAI_API_KEY in .env."
+                "LLM client is not initialized. Please set DEEPSEEK_API_KEY or OPENAI_API_KEY in .env or the UI."
             )
 
         # Format context articles
@@ -127,8 +137,17 @@ class OpenAILLM(LLMPort):
         temp = temperature if temperature is not None else self._temperature
         model_name = model_override or self._model
 
+        # Adjust endpoint if model_override dictates it
+        if "gpt-" in model_name.lower() and self._client.base_url != "https://api.openai.com/v1/":
+            # If switching to an OpenAI model, ensure default OpenAI base_url is used
+            client = OpenAI(api_key=self._api_key)
+        elif "deepseek" in model_name.lower() and "deepseek.com" not in str(self._client.base_url):
+            client = OpenAI(api_key=self._api_key, base_url="https://api.deepseek.com")
+        else:
+            client = self._client
+
         try:
-            return self._call_chat_completion(sys_prompt, user_content, temp, model_name)
+            return self._call_chat_completion(client, sys_prompt, user_content, temp, model_name)
         except Exception as e:
             logger.error("LLM generation failed", error=str(e), model=model_name)
             raise GenerationError(f"LLM generation error ({model_name}): {e}")
@@ -140,13 +159,13 @@ class OpenAILLM(LLMPort):
     )
     def _call_chat_completion(
         self,
+        client: OpenAI,
         system_prompt: str,
         user_content: str,
         temperature: float,
         model_name: str,
     ) -> str:
         """Execute chat completion with retry (supports DeepSeek Chat & Reasoner)."""
-        # DeepSeek Reasoner does not support temperature parameter in some versions
         kwargs = {
             "model": model_name,
             "messages": [
@@ -157,7 +176,7 @@ class OpenAILLM(LLMPort):
         if "reasoner" not in model_name.lower():
             kwargs["temperature"] = temperature
 
-        response = self._client.chat.completions.create(**kwargs)
+        response = client.chat.completions.create(**kwargs)
         message = response.choices[0].message
 
         # Capture reasoning content from DeepSeek R1 / Reasoner if present
