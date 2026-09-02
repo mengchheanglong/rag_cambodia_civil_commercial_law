@@ -46,12 +46,16 @@ class LegalQARequest(BaseModel):
     question: str = Field(..., description="The legal question to answer")
     top_k: int = Field(default=5, description="Number of source articles to use")
     law_filter: Optional[str] = Field(None, description="Filter by law name")
+    model: Optional[str] = Field(default=None, description="LLM model (e.g. deepseek-chat, deepseek-reasoner, gpt-4o)")
+    api_key: Optional[str] = Field(default=None, description="Optional override API key")
 
 
 class LegalQAResponse(BaseModel):
     """Response from the legal Q&A system."""
     question: str
     answer: str
+    reasoning_content: Optional[str] = Field(default=None, description="Chain-of-thought from reasoning models")
+    model_used: Optional[str] = Field(default=None, description="Model used for generation")
     citations: list[dict] = Field(default_factory=list)
     source_articles: list[dict] = Field(default_factory=list)
     disclaimer: str = (

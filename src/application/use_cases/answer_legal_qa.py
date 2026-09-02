@@ -1,7 +1,7 @@
 """
 Use Case: Answer a legal question with cited articles.
 
-Pipeline: Question → Hybrid Retrieve → Rerank → LLM Generate → Verify Citations
+Pipeline: Question → Hybrid Retrieve → Rerank → LLM Generate (DeepSeek / OpenAI) → Verify Citations
 """
 
 from src.config.logging import get_logger
@@ -32,7 +32,7 @@ class AnswerLegalQAUseCase:
     Orchestrates the full legal Q&A pipeline.
 
     Retrieves relevant legal articles via hybrid search,
-    generates a cited answer using an LLM, and verifies
+    generates a cited answer using DeepSeek / OpenAI, and verifies
     that all citations reference articles in the retrieved context.
     """
 
@@ -52,9 +52,9 @@ class AnswerLegalQAUseCase:
             request: The legal question and retrieval parameters.
 
         Returns:
-            LegalQAResponse with answer, citations, and source articles.
+            LegalQAResponse with answer, reasoning, citations, and source articles.
         """
-        logger.info("Processing legal question", question=request.question)
+        logger.info("Processing legal question", question=request.question, model=request.model)
 
         # Step 1: Retrieve relevant articles
         retrieval_request = RetrievalRequest(
@@ -66,11 +66,37 @@ class AnswerLegalQAUseCase:
         logger.info("Retrieved source articles", count=len(retrieved_docs))
 
         # Step 2: Generate answer with citations
-        answer = self._llm.generate(
-            query=request.question,
-            context_documents=retrieved_docs,
-            system_prompt=LEGAL_SYSTEM_PROMPT,
-        )
+        generate_kwargs = {
+            "query": request.question,
+            "context_documents": retrieved_docs,
+            "system_prompt": LEGAL_SYSTEM_PROMPT,
+        }
+        if request.model and hasattr(self._llm, "generate"):
+            try:
+                answer = self._llm.generate(
+                    query=request.question,
+                    context_documents=retrieved_docs,
+                    system_prompt=LEGAL_SYSTEM_PROMPT,
+                    model_override=request.model,
+                )
+            except TypeError:
+                answer = self._llm.generate(**generate_kwargs)
+        else:
+            answer = self._llm.generate(**generate_kwargs)
+
+        reasoning_content = None
+        raw_reasoning = getattr(self._llm, "last_reasoning_content", None)
+        if isinstance(raw_reasoning, str):
+            reasoning_content = raw_reasoning
+
+        model_used = None
+        if request.model:
+            model_used = request.model
+        else:
+            raw_model = getattr(self._llm, "_model", None)
+            if isinstance(raw_model, str):
+                model_used = raw_model
+
         logger.info("Answer generated")
 
         # Step 3: Verify citations against retrieved context
@@ -91,6 +117,8 @@ class AnswerLegalQAUseCase:
         return LegalQAResponse(
             question=request.question,
             answer=answer,
+            reasoning_content=reasoning_content,
+            model_used=model_used,
             citations=[c.model_dump() for c in citations],
             source_articles=source_articles,
         )

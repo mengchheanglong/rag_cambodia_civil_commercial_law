@@ -1,8 +1,11 @@
 """
-OpenAI LLM Generation Adapter.
+LLM Generation Adapter (DeepSeek & OpenAI compatible).
 
-Implements LLMPort using OpenAI Chat Completions (e.g. GPT-4o / GPT-4o-mini).
-Enforces context grounding and structured article citation rules.
+Implements LLMPort using OpenAI-compatible API standard:
+- Supports DeepSeek Chat (Flash / V3 / V4 fast mode) via 'deepseek-chat'
+- Supports DeepSeek Reasoner (Pro / R1 reasoning mode) via 'deepseek-reasoner'
+- Supports OpenAI models ('gpt-4o', 'gpt-4o-mini')
+- Enforces statutory context grounding and article citation rules.
 """
 
 from typing import Optional
@@ -26,24 +29,57 @@ logger = get_logger(__name__)
 
 class OpenAILLM(LLMPort):
     """
-    Adapter for generating grounded legal answers via OpenAI's Chat API.
+    Adapter for generating grounded legal answers via DeepSeek / OpenAI API.
     """
 
     def __init__(
         self,
         settings: Optional[Settings] = None,
+        api_key: Optional[str] = None,
+        base_url: Optional[str] = None,
+        model: Optional[str] = None,
     ) -> None:
         self._settings = settings or get_settings()
-        self._model = self._settings.openai_llm_model
-        self._temperature = self._settings.openai_llm_temperature
 
-        api_key = self._settings.openai_api_key
-        if not api_key:
+        # Determine effective API key
+        self._api_key = (
+            api_key
+            or self._settings.deepseek_api_key
+            or self._settings.llm_api_key
+            or self._settings.openai_api_key
+        )
+
+        # Determine effective Base URL
+        if base_url:
+            self._base_url = base_url
+        elif self._settings.deepseek_api_key or self._settings.llm_provider == "deepseek":
+            self._base_url = self._settings.deepseek_base_url or "https://api.deepseek.com"
+        elif self._settings.llm_base_url:
+            self._base_url = self._settings.llm_base_url
+        else:
+            self._base_url = None  # default OpenAI endpoint
+
+        # Determine effective model
+        self._model = (
+            model
+            or (self._settings.deepseek_model if self._settings.deepseek_api_key else None)
+            or self._settings.llm_model
+            or self._settings.openai_llm_model
+        )
+        self._temperature = self._settings.llm_temperature
+
+        if not self._api_key:
             logger.warning(
-                "OPENAI_API_KEY is not set. OpenAILLM will fail if generate() is called without a key."
+                "No LLM API key configured (DEEPSEEK_API_KEY / OPENAI_API_KEY). "
+                "OpenAILLM will fail if generate() is called without a key."
             )
 
-        self._client: Optional[OpenAI] = OpenAI(api_key=api_key) if api_key else None
+        self._client: Optional[OpenAI] = (
+            OpenAI(api_key=self._api_key, base_url=self._base_url)
+            if self._api_key
+            else None
+        )
+        self.last_reasoning_content: Optional[str] = None
 
     def generate(
         self,
@@ -51,6 +87,7 @@ class OpenAILLM(LLMPort):
         context_documents: list[RetrievedDocument],
         system_prompt: Optional[str] = None,
         temperature: Optional[float] = None,
+        model_override: Optional[str] = None,
     ) -> str:
         """
         Generate a cited legal answer grounded strictly in the provided articles.
@@ -60,13 +97,14 @@ class OpenAILLM(LLMPort):
             context_documents: Retrieved context articles.
             system_prompt: Optional system prompt override.
             temperature: Sampling temperature override.
+            model_override: Optional model override (e.g. 'deepseek-reasoner').
 
         Returns:
             Generated answer text.
         """
         if not self._client:
             raise GenerationError(
-                "OpenAI client is not initialized. Please set OPENAI_API_KEY in your .env file."
+                "LLM client is not initialized. Please set DEEPSEEK_API_KEY or OPENAI_API_KEY in .env."
             )
 
         # Format context articles
@@ -87,12 +125,13 @@ class OpenAILLM(LLMPort):
 
         sys_prompt = system_prompt or LEGAL_QA_SYSTEM_PROMPT
         temp = temperature if temperature is not None else self._temperature
+        model_name = model_override or self._model
 
         try:
-            return self._call_chat_completion(sys_prompt, user_content, temp)
+            return self._call_chat_completion(sys_prompt, user_content, temp, model_name)
         except Exception as e:
-            logger.error("LLM generation failed", error=str(e))
-            raise GenerationError(f"OpenAI generation error: {e}")
+            logger.error("LLM generation failed", error=str(e), model=model_name)
+            raise GenerationError(f"LLM generation error ({model_name}): {e}")
 
     @retry(
         stop=stop_after_attempt(3),
@@ -104,14 +143,27 @@ class OpenAILLM(LLMPort):
         system_prompt: str,
         user_content: str,
         temperature: float,
+        model_name: str,
     ) -> str:
-        """Execute OpenAI chat completion with retry."""
-        response = self._client.chat.completions.create(
-            model=self._model,
-            temperature=temperature,
-            messages=[
+        """Execute chat completion with retry (supports DeepSeek Chat & Reasoner)."""
+        # DeepSeek Reasoner does not support temperature parameter in some versions
+        kwargs = {
+            "model": model_name,
+            "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_content},
             ],
-        )
-        return response.choices[0].message.content.strip()
+        }
+        if "reasoner" not in model_name.lower():
+            kwargs["temperature"] = temperature
+
+        response = self._client.chat.completions.create(**kwargs)
+        message = response.choices[0].message
+
+        # Capture reasoning content from DeepSeek R1 / Reasoner if present
+        if hasattr(message, "reasoning_content") and message.reasoning_content:
+            self.last_reasoning_content = message.reasoning_content
+        else:
+            self.last_reasoning_content = None
+
+        return message.content.strip() if message.content else ""
