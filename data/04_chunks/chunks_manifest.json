@@ -1,0 +1,20 @@
+[
+  {
+    "law_name": "Civil Code 2007",
+    "law_key": "civil_code_2007_en",
+    "chunks_count": 1297,
+    "first_article": 1,
+    "last_article": 1305,
+    "json_path": "data\\04_chunks\\civil_code_2007_en_chunks.json",
+    "jsonl_path": "data\\04_chunks\\civil_code_2007_en_chunks.jsonl"
+  },
+  {
+    "law_name": "Law on Commercial Arbitration 2006",
+    "law_key": "commercial_arbitration_2006_en",
+    "chunks_count": 50,
+    "first_article": 1,
+    "last_article": 47,
+    "json_path": "data\\04_chunks\\commercial_arbitration_2006_en_chunks.json",
+    "jsonl_path": "data\\04_chunks\\commercial_arbitration_2006_en_chunks.jsonl"
+  }
+]

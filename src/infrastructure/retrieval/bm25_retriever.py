@@ -2,9 +2,11 @@
 BM25 Sparse Retriever Adapter.
 
 Implements SparseRetrieverPort using rank-bm25 (BM25Okapi).
-Supports indexing, querying, serialization to disk, and legal-specific tokenization.
+Supports indexing, querying, serialization to disk, legal-specific tokenization,
+and auto-building from data/04_chunks/*.json on first run.
 """
 
+import json
 import pickle
 from pathlib import Path
 from typing import Optional
@@ -51,6 +53,31 @@ class BM25Retriever(SparseRetrieverPort):
 
         if self._index_path.exists():
             self.load()
+        else:
+            # Auto-build from data/04_chunks/*.json if index.pkl is not found
+            self._auto_index_from_chunks(base_dir / "data" / "04_chunks")
+
+    def _auto_index_from_chunks(self, chunks_dir: Path) -> None:
+        """Automatically load and build index from data/04_chunks/*.json if index.pkl is missing."""
+        if not chunks_dir.exists():
+            return
+        all_chunks: list[LegalChunk] = []
+        for json_file in sorted(chunks_dir.glob("*_chunks.json")):
+            try:
+                with open(json_file, encoding="utf-8") as f:
+                    data = json.load(f)
+                    for item in data:
+                        all_chunks.append(LegalChunk.model_validate(item))
+            except Exception as e:
+                logger.warning(f"Failed to auto-load chunks from {json_file}: {e}")
+
+        if all_chunks:
+            logger.info("Auto-building BM25 index from chunks directory", count=len(all_chunks))
+            self.index(all_chunks)
+            try:
+                self.save()
+            except Exception:
+                pass
 
     def index(self, chunks: list[LegalChunk]) -> None:
         """
@@ -74,75 +101,78 @@ class BM25Retriever(SparseRetrieverPort):
             total_documents=len(self._chunks),
             vocab_size=len(self._bm25.idf) if hasattr(self._bm25, "idf") else None,
         )
-        self.save()
 
-    def search(self, query: str, top_k: int = 50) -> list[RetrievedDocument]:
+    def search(
+        self,
+        query: str,
+        top_k: int = 50,
+    ) -> list[RetrievedDocument]:
         """
-        Search the BM25 index for the most relevant chunks.
+        Search for relevant legal chunks using BM25.
 
         Args:
-            query: The search query string.
-            top_k: Maximum number of candidate results.
+            query: User's query string.
+            top_k: Maximum number of chunks to return.
 
         Returns:
             List of RetrievedDocument with sparse_score populated.
         """
         if not self._bm25 or not self._chunks:
-            logger.warning("BM25 index is empty. Returning empty results.")
+            logger.warning("BM25 search called on uninitialized index.")
             return []
 
         query_tokens = tokenize_legal_text(query)
         if not query_tokens:
             return []
 
-        scores = self._bm25.get_scores(query_tokens)
+        doc_scores = self._bm25.get_scores(query_tokens)
 
-        # Get top_k indices sorted descending by score
-        indexed_scores = [(idx, score) for idx, score in enumerate(scores) if score > 0]
-        indexed_scores.sort(key=lambda x: x[1], reverse=True)
-        top_matches = indexed_scores[:top_k]
+        # Get top_k indices sorted by score descending
+        scored_indices = sorted(
+            range(len(doc_scores)),
+            key=lambda i: doc_scores[i],
+            reverse=True,
+        )[:top_k]
 
         results: list[RetrievedDocument] = []
-        for idx, score in top_matches:
-            results.append(
-                RetrievedDocument(
-                    chunk=self._chunks[idx],
-                    sparse_score=float(score),
+        for idx in scored_indices:
+            score = float(doc_scores[idx])
+            if score > 0.0:  # Only return documents with non-zero match score
+                results.append(
+                    RetrievedDocument(
+                        chunk=self._chunks[idx],
+                        sparse_score=score,
+                    )
                 )
-            )
 
         return results
 
-    def save(self) -> None:
-        """Serialize BM25 index and chunks to disk."""
-        try:
-            with open(self._index_path, "wb") as f:
-                pickle.dump(
-                    {
-                        "chunks": self._chunks,
-                        "corpus_tokens": self._corpus_tokens,
-                        "bm25": self._bm25,
-                    },
-                    f,
-                )
-            logger.info("Saved BM25 index to disk", path=str(self._index_path))
-        except Exception as e:
-            logger.error("Failed to save BM25 index", error=str(e))
+    def save(self, path: Optional[Path] = None) -> None:
+        """Serialize the BM25 index and chunk metadata to disk."""
+        target_path = path or self._index_path
+        data = {
+            "chunks": [chunk.model_dump() for chunk in self._chunks],
+            "corpus_tokens": self._corpus_tokens,
+        }
+        with open(target_path, "wb") as f:
+            pickle.dump(data, f)
+        logger.info("Saved BM25 index to disk", path=str(target_path), total_documents=len(self._chunks))
 
-    def load(self) -> bool:
-        """Load BM25 index and chunks from disk if available."""
-        try:
-            with open(self._index_path, "rb") as f:
-                data = pickle.load(f)
-                self._chunks = data.get("chunks", [])
-                self._corpus_tokens = data.get("corpus_tokens", [])
-                self._bm25 = data.get("bm25")
-            logger.info(
-                "Loaded BM25 index from disk",
-                total_documents=len(self._chunks),
-                path=str(self._index_path),
-            )
-            return True
-        except Exception as e:
-            logger.warning("Could not load BM25 index from disk", error=str(e))
-            return False
+    def load(self, path: Optional[Path] = None) -> None:
+        """Load a serialized BM25 index from disk."""
+        target_path = path or self._index_path
+        if not target_path.exists():
+            logger.warning("BM25 index is not found on disk", path=str(target_path))
+            return
+
+        with open(target_path, "rb") as f:
+            data = pickle.load(f)
+
+        self._chunks = [LegalChunk.model_validate(chunk_data) for chunk_data in data["chunks"]]
+        self._corpus_tokens = data["corpus_tokens"]
+        self._bm25 = BM25Okapi(self._corpus_tokens)
+        logger.info(
+            "Loaded BM25 index from disk",
+            path=str(target_path),
+            total_documents=len(self._chunks),
+        )

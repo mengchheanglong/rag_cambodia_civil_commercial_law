@@ -14,15 +14,14 @@ dist/
 build/
 *.egg
 
-# Data files (keep directory structure, ignore contents)
+# Data files (keep directory structure, ignore raw/large caches)
 data/01_raw/**/*.pdf
 data/02_extracted/**/*.txt
 data/02_extracted/**/*.json
 data/03_cleaned/**/*.txt
 data/03_cleaned/**/*.json
-data/04_chunks/**/*.json
 data/04_chunks/**/*.jsonl
-data/indices/
+data/indices/embedding_cache/
 
 # Keep .gitkeep files
 !**/.gitkeep
