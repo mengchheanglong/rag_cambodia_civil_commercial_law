@@ -6,6 +6,14 @@ Launch with:
 streamlit run src/interfaces/ui/app.py
 """
 
+import sys
+from pathlib import Path
+
+# Ensure repo root is always in sys.path
+repo_root = Path(__file__).resolve().parent.parent.parent.parent
+if str(repo_root) not in sys.path:
+    sys.path.insert(0, str(repo_root))
+
 import streamlit as st
 
 from src.application.dtos import LegalQARequest, RetrievalRequest

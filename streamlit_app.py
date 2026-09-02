@@ -3,8 +3,14 @@ Streamlit entrypoint for Streamlit Community Cloud deployment.
 Redirects to the main UI application at src/interfaces/ui/app.py.
 """
 
+import sys
 import runpy
 from pathlib import Path
 
-app_path = Path(__file__).parent / "src" / "interfaces" / "ui" / "app.py"
+# Ensure repo root is on Python path
+repo_root = Path(__file__).resolve().parent
+if str(repo_root) not in sys.path:
+    sys.path.insert(0, str(repo_root))
+
+app_path = repo_root / "src" / "interfaces" / "ui" / "app.py"
 runpy.run_path(str(app_path), run_name="__main__")
