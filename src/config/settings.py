@@ -1,7 +1,7 @@
 """
 Application settings loaded from environment variables.
 
-Uses pydantic-settings to validate and type-check all configuration.
+Configured for DeepSeek Flash LLM and Cambodian Legal Retrieval.
 Copy .env.example to .env and fill in your values.
 """
 
@@ -17,24 +17,16 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # ── LLM Configuration (DeepSeek / OpenAI) ────────────────────────
-    llm_provider: str = "deepseek"  # "deepseek" or "openai"
-    llm_api_key: str = ""
-    llm_base_url: str = "https://api.deepseek.com"
-    llm_model: str = "deepseek-chat"  # "deepseek-chat" (Flash/V3/V4) or "deepseek-reasoner" (Pro/R1)
-    llm_temperature: float = 0.1
-
-    # ── DeepSeek Specific ────────────────────────────────────────────
+    # ── DeepSeek LLM (Dedicated Provider) ────────────────────────────
     deepseek_api_key: str = ""
     deepseek_base_url: str = "https://api.deepseek.com"
-    deepseek_model: str = "deepseek-chat"  # "deepseek-chat" or "deepseek-reasoner"
+    deepseek_model: str = "deepseek-chat"  # DeepSeek Flash
+    llm_temperature: float = 0.1
 
-    # ── OpenAI ──────────────────────────────────────────────────────
+    # ── Embeddings (OpenAI / Multilingual) ────────────────────────────
     openai_api_key: str = ""
     openai_embedding_model: str = "text-embedding-3-large"
     openai_embedding_dimensions: int = 3072
-    openai_llm_model: str = "gpt-4o"
-    openai_llm_temperature: float = 0.1
 
     # ── Database ────────────────────────────────────────────────────
     database_url: str = "postgresql+psycopg://user:password@localhost:5432/rag_cambodia_law"

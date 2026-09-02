@@ -1,12 +1,8 @@
 """
-LLM Generation Adapter (DeepSeek & OpenAI compatible).
+DeepSeek Flash LLM Generation Adapter.
 
-Implements LLMPort using OpenAI-compatible API standard:
-- Supports DeepSeek Chat (Flash / V3 / V4 fast mode) via 'deepseek-chat'
-- Supports DeepSeek Reasoner (Pro / R1 reasoning mode) via 'deepseek-reasoner'
-- Supports OpenAI models ('gpt-4o', 'gpt-4o-mini')
-- Auto-detects key format (sk-proj-... for OpenAI vs sk-... for DeepSeek)
-- Enforces statutory context grounding and article citation rules.
+Implements LLMPort using DeepSeek's OpenAI-compatible API endpoint (https://api.deepseek.com).
+Uses 'deepseek-chat' (DeepSeek Flash) for fast, cost-effective, cited legal question-answering.
 """
 
 from typing import Optional
@@ -30,7 +26,7 @@ logger = get_logger(__name__)
 
 class OpenAILLM(LLMPort):
     """
-    Adapter for generating grounded legal answers via DeepSeek / OpenAI API.
+    Adapter for generating cited legal answers via DeepSeek Flash.
     """
 
     def __init__(
@@ -42,46 +38,18 @@ class OpenAILLM(LLMPort):
     ) -> None:
         self._settings = settings or get_settings()
 
-        # Determine effective API key and strip accidental quotes / whitespace
-        raw_key = (
-            api_key
-            or self._settings.deepseek_api_key
-            or self._settings.llm_api_key
-            or self._settings.openai_api_key
-        )
+        # Determine effective API key and sanitize
+        raw_key = api_key or self._settings.deepseek_api_key or self._settings.openai_api_key
         self._api_key = raw_key.strip().strip('"').strip("'") if raw_key else ""
 
-        # Auto-detect key type
-        is_openai_project_key = bool(self._api_key and self._api_key.startswith("sk-proj-"))
-
-        # Determine effective Base URL
-        if base_url:
-            self._base_url = base_url
-        elif is_openai_project_key:
-            self._base_url = None  # OpenAI default
-        elif self._settings.deepseek_api_key or self._settings.llm_provider == "deepseek":
-            self._base_url = self._settings.deepseek_base_url or "https://api.deepseek.com"
-        elif self._settings.llm_base_url:
-            self._base_url = self._settings.llm_base_url
-        else:
-            self._base_url = None
-
-        # Determine effective model
-        if is_openai_project_key and not model:
-            self._model = self._settings.openai_llm_model or "gpt-4o"
-        else:
-            self._model = (
-                model
-                or (self._settings.deepseek_model if self._settings.deepseek_api_key else None)
-                or self._settings.llm_model
-                or self._settings.openai_llm_model
-            )
+        # DeepSeek API endpoint
+        self._base_url = base_url or self._settings.deepseek_base_url or "https://api.deepseek.com"
+        self._model = model or self._settings.deepseek_model or "deepseek-chat"
         self._temperature = self._settings.llm_temperature
 
         if not self._api_key:
             logger.warning(
-                "No LLM API key configured (DEEPSEEK_API_KEY / OPENAI_API_KEY). "
-                "OpenAILLM will fail if generate() is called without a key."
+                "DEEPSEEK_API_KEY is not set. DeepSeekLLM will fail if generate() is called without a key."
             )
 
         self._client: Optional[OpenAI] = (
@@ -89,7 +57,6 @@ class OpenAILLM(LLMPort):
             if self._api_key
             else None
         )
-        self.last_reasoning_content: Optional[str] = None
 
     def generate(
         self,
@@ -100,21 +67,21 @@ class OpenAILLM(LLMPort):
         model_override: Optional[str] = None,
     ) -> str:
         """
-        Generate a cited legal answer grounded strictly in the provided articles.
+        Generate a cited legal answer grounded strictly in the provided articles using DeepSeek Flash.
 
         Args:
             query: The user question.
             context_documents: Retrieved context articles.
             system_prompt: Optional system prompt override.
             temperature: Sampling temperature override.
-            model_override: Optional model override (e.g. 'deepseek-reasoner').
+            model_override: Optional model override.
 
         Returns:
-            Generated answer text.
+            Generated answer text with article citations.
         """
         if not self._client:
             raise GenerationError(
-                "LLM client is not initialized. Please set DEEPSEEK_API_KEY or OPENAI_API_KEY in .env or the UI."
+                "DeepSeek client is not initialized. Please set DEEPSEEK_API_KEY in .env or the UI."
             )
 
         # Format context articles
@@ -137,20 +104,11 @@ class OpenAILLM(LLMPort):
         temp = temperature if temperature is not None else self._temperature
         model_name = model_override or self._model
 
-        # Adjust endpoint if model_override dictates it
-        if "gpt-" in model_name.lower() and self._client.base_url != "https://api.openai.com/v1/":
-            # If switching to an OpenAI model, ensure default OpenAI base_url is used
-            client = OpenAI(api_key=self._api_key)
-        elif "deepseek" in model_name.lower() and "deepseek.com" not in str(self._client.base_url):
-            client = OpenAI(api_key=self._api_key, base_url="https://api.deepseek.com")
-        else:
-            client = self._client
-
         try:
-            return self._call_chat_completion(client, sys_prompt, user_content, temp, model_name)
+            return self._call_chat_completion(sys_prompt, user_content, temp, model_name)
         except Exception as e:
-            logger.error("LLM generation failed", error=str(e), model=model_name)
-            raise GenerationError(f"LLM generation error ({model_name}): {e}")
+            logger.error("DeepSeek generation failed", error=str(e), model=model_name)
+            raise GenerationError(f"DeepSeek Flash generation error: {e}")
 
     @retry(
         stop=stop_after_attempt(3),
@@ -159,30 +117,22 @@ class OpenAILLM(LLMPort):
     )
     def _call_chat_completion(
         self,
-        client: OpenAI,
         system_prompt: str,
         user_content: str,
         temperature: float,
         model_name: str,
     ) -> str:
-        """Execute chat completion with retry (supports DeepSeek Chat & Reasoner)."""
-        kwargs = {
-            "model": model_name,
-            "messages": [
+        """Execute DeepSeek Flash chat completion with retry."""
+        response = self._client.chat.completions.create(
+            model=model_name,
+            temperature=temperature,
+            messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_content},
             ],
-        }
-        if "reasoner" not in model_name.lower():
-            kwargs["temperature"] = temperature
+        )
+        return response.choices[0].message.content.strip()
 
-        response = client.chat.completions.create(**kwargs)
-        message = response.choices[0].message
 
-        # Capture reasoning content from DeepSeek R1 / Reasoner if present
-        if hasattr(message, "reasoning_content") and message.reasoning_content:
-            self.last_reasoning_content = message.reasoning_content
-        else:
-            self.last_reasoning_content = None
-
-        return message.content.strip() if message.content else ""
+# Alias for clean naming
+DeepSeekLLM = OpenAILLM

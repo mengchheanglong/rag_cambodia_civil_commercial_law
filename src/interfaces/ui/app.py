@@ -1,7 +1,7 @@
 """
 Streamlit Web UI for Cambodian Civil & Commercial Law RAG.
 
-Supports DeepSeek (Flash / Pro) & OpenAI models with grounded article citations.
+Powered by DeepSeek Flash (v4 / deepseek-chat) with statutory article citations.
 Launch with:
 streamlit run src/interfaces/ui/app.py
 """
@@ -31,7 +31,7 @@ from src.interfaces.api.dependencies import get_hybrid_retriever, get_qa_use_cas
 
 # Page configuration
 st.set_page_config(
-    page_title="RAG Cambodia Law",
+    page_title="RAG Cambodia Law (DeepSeek Flash)",
     page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -39,33 +39,22 @@ st.set_page_config(
 
 st.title("⚖️ Cambodian Civil & Commercial Law Assistant")
 st.caption(
-    "Ground truth legal retrieval and question-answering based on official Cambodian statutes."
+    "Ground truth legal retrieval and statutory question-answering powered by **DeepSeek Flash**."
 )
 
-# Sidebar filters & metadata
+# Sidebar configuration
 with st.sidebar:
-    st.header("⚙️ Model & Search Config")
+    st.header("⚙️ Configuration")
 
-    # LLM Model Selector (DeepSeek Flash vs Pro vs OpenAI)
-    model_options = {
-        "⚡ DeepSeek V3 / Flash (Fast & Efficient)": "deepseek-chat",
-        "🧠 DeepSeek R1 / Pro (Deep Legal Reasoning)": "deepseek-reasoner",
-        "🤖 OpenAI GPT-4o": "gpt-4o",
-        "⚡ OpenAI GPT-4o-mini": "gpt-4o-mini",
-    }
-    selected_model_label = st.selectbox(
-        "LLM Generation Model:",
-        options=list(model_options.keys()),
-        index=0,
-    )
-    selected_model = model_options[selected_model_label]
+    st.markdown("⚡ **LLM Engine**: `DeepSeek Flash (v4)`")
+    st.caption("Model: `deepseek-chat` via DeepSeek API")
 
-    # Optional dynamic API key override
+    # API Key Input
     api_key_input = st.text_input(
-        "API Key (DeepSeek / OpenAI):",
+        "DeepSeek API Key:",
         type="password",
-        placeholder="sk-... (or set in Streamlit Secrets)",
-        help="Paste your DeepSeek API key (or OpenAI key if using GPT-4o).",
+        placeholder="sk-... (or set in Secrets)",
+        help="Enter your API key from platform.deepseek.com",
     )
 
     st.divider()
@@ -84,12 +73,12 @@ with st.sidebar:
         """
         - **Civil Code 2007**: 1,297 Articles
         - **Law on Commercial Arbitration 2006**: 50 Articles
-        - **Retrieval Engine**: Hybrid (BM25 + Dense Vectors)
-        - **LLM Engine**: DeepSeek / OpenAI
+        - **Retrieval Engine**: BM25 + pgvector Hybrid
+        - **LLM Engine**: DeepSeek Flash (v4)
         """
     )
     st.info(
-        "💡 **Tip**: Queries can be conceptual (e.g. *'What is a defect in sold goods?'*) or exact (e.g. *'Article 336'*)."
+        "💡 **Tip**: Ask questions in English or Khmer. Every statement is grounded in official Cambodian statutes."
     )
 
 # Tabs
@@ -117,11 +106,11 @@ with tab_qa:
         placeholder="e.g., What are the legal requirements for contract formation?",
     )
 
-    if st.button("🚀 Analyze & Answer", type="primary"):
+    if st.button("🚀 Analyze with DeepSeek Flash", type="primary"):
         if not user_query.strip():
             st.warning("Please enter a question to analyze.")
         else:
-            with st.spinner(f"Analyzing with {selected_model_label}..."):
+            with st.spinner("Analyzing with DeepSeek Flash..."):
                 try:
                     qa_use_case = get_qa_use_case()
 
@@ -134,29 +123,19 @@ with tab_qa:
 
                     if clean_key and hasattr(qa_use_case._llm, "_client"):
                         from openai import OpenAI
-                        is_openai_key = clean_key.startswith("sk-proj-")
-                        if is_openai_key or "gpt-" in selected_model:
-                            base_url = None
-                        elif "deepseek" in selected_model:
-                            base_url = "https://api.deepseek.com"
-                        else:
-                            base_url = None
-
-                        qa_use_case._llm._client = OpenAI(api_key=clean_key, base_url=base_url)
+                        qa_use_case._llm._client = OpenAI(
+                            api_key=clean_key,
+                            base_url="https://api.deepseek.com",
+                        )
                         qa_use_case._llm._api_key = clean_key
 
                     req = LegalQARequest(
                         question=user_query,
                         top_k=top_k,
                         law_filter=law_filter,
-                        model=selected_model,
+                        model="deepseek-chat",
                     )
                     response = qa_use_case.execute(req)
-
-                    # Display Reasoning Chain (if DeepSeek Reasoner)
-                    if response.reasoning_content:
-                        with st.expander("🧠 Deep Legal Reasoning Process (DeepSeek Reasoner)", expanded=False):
-                            st.markdown(response.reasoning_content)
 
                     # Display Answer
                     st.markdown("### 📝 Legal Analysis")
@@ -194,12 +173,9 @@ with tab_qa:
                         st.info(
                             """
                             💡 **How to resolve this 401 Authentication Error**:
-                            - If you are using **DeepSeek Flash / Pro**:
-                              1. Get a valid key from [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys).
-                              2. Ensure your account has top-up balance.
-                              3. Paste the key in the **API Key** box on the sidebar.
-                            - If you are using an **OpenAI key** (starts with `sk-proj-...`):
-                              1. In the sidebar dropdown, switch the model to **🤖 OpenAI GPT-4o** or **⚡ OpenAI GPT-4o-mini**.
+                            1. Go to [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys) and generate an API key.
+                            2. Ensure your DeepSeek account has positive balance / credits.
+                            3. Paste the key in the **DeepSeek API Key** box on the sidebar.
                             """
                         )
 
