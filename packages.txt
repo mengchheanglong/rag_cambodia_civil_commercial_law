@@ -1,5 +1,2 @@
-# Streamlit Community Cloud — OS package dependencies
-# Required for PyMuPDF, pdf2image, and OCR support
-libmupdf-dev
 tesseract-ocr
 poppler-utils
