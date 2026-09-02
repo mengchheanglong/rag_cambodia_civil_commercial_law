@@ -78,7 +78,7 @@ with st.sidebar:
         """
     )
     st.info(
-        "💡 **Tip**: Ask questions in English or Khmer. Every statement is grounded in official Cambodian statutes."
+        "💡 **Tip**: Ask questions in English or Khmer (ភាសាខ្មែរ). Every statement is grounded in official statutes."
     )
 
 # Tabs
@@ -88,6 +88,7 @@ tab_qa, tab_search = st.tabs(["💬 Legal Q&A Assistant", "🔎 Statutory Articl
 with tab_qa:
     st.subheader("Ask a Legal Question")
     example_questions = [
+        "តើកិច្ចសន្យាបង្កើតឡើងដោយរបៀបណា យោងតាមក្រមរដ្ឋប្បវេណី?",
         "How is a contract formed by offer and acceptance under the Cambodian Civil Code?",
         "What are the formal requirements for an arbitration agreement to be valid?",
         "What is the principle of good faith in Cambodian civil obligations?",
@@ -101,9 +102,9 @@ with tab_qa:
     )
 
     user_query = st.text_input(
-        "Your question:",
+        "Your question (English / ខ្មែរ):",
         value=selected_example if selected_example != "-- Select an example --" else "",
-        placeholder="e.g., What are the legal requirements for contract formation?",
+        placeholder="e.g. តើកិច្ចសន្យាបង្កើតឡើងដោយរបៀបណា? or What are the requirements for contract formation?",
     )
 
     if st.button("🚀 Analyze with DeepSeek Flash", type="primary"):
@@ -181,9 +182,11 @@ with tab_qa:
 
                     st.markdown("---")
                     st.markdown("### 📚 Retrieved Statutory Context Articles:")
+                    qa_use_case = get_qa_use_case()
+                    search_q = qa_use_case._prepare_search_query(user_query)
                     retriever = get_hybrid_retriever()
                     docs = retriever.execute(
-                        RetrievalRequest(query=user_query, top_k=top_k, law_filter=law_filter)
+                        RetrievalRequest(query=search_q, top_k=top_k, law_filter=law_filter)
                     )
                     for doc in docs:
                         with st.container(border=True):
@@ -198,14 +201,16 @@ with tab_qa:
 with tab_search:
     st.subheader("Explore Statutory Articles")
     search_term = st.text_input(
-        "Search keywords, concepts, or article numbers:",
-        placeholder="e.g. good faith, arbitration, Article 336",
+        "Search keywords, concepts, or article numbers (English / ខ្មែរ):",
+        placeholder="e.g. good faith, កិច្ចសន្យា, Article 336",
     )
 
     if search_term.strip():
+        qa_use_case = get_qa_use_case()
+        mapped_search = qa_use_case._prepare_search_query(search_term)
         retriever = get_hybrid_retriever()
         results = retriever.execute(
-            RetrievalRequest(query=search_term, top_k=10, law_filter=law_filter)
+            RetrievalRequest(query=mapped_search, top_k=10, law_filter=law_filter)
         )
 
         st.markdown(f"Found **{len(results)}** relevant articles:")

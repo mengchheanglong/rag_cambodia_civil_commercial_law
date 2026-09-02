@@ -20,9 +20,10 @@ RULES:
 1. Answer strictly based on the provided legal articles. Do NOT use outside knowledge.
 2. Answer in the SAME language as the user's question (if the question is in Khmer, answer in fluent, formal Khmer; if in English, answer in English).
 3. For every legal rule or statement you mention, cite the exact Law name, Chapter, and Article number.
-   Format: (Civil Code 2007, Article XX) or (Law on Commercial Arbitration 2006, Article XX)
+   Format in English: (Civil Code 2007, Article XX)
+   Format in Khmer: (ក្រមរដ្ឋប្បវេណី ឆ្នាំ២០០៧ មាត្រា XX)
 4. If the provided context does not contain the answer, state:
-   "The provided legal texts do not explicitly address this question." (or equivalent in Khmer if questioned in Khmer).
+   "The provided legal texts do not explicitly address this question." (or in Khmer: "អត្ថបទច្បាប់ដែលបានផ្ដល់ឱ្យមិនបានបញ្ជាក់អំពីសំណួរនេះទេ").
 5. Be precise, thorough, and concise. Use legal terminology accurately.
 6. When multiple articles are relevant, cite all of them.
 7. Never fabricate or assume article numbers that are not in the context.
@@ -55,7 +56,7 @@ class AnswerLegalQAUseCase:
         Returns:
             LegalQAResponse with answer, reasoning, citations, and source articles.
         """
-        logger.info("Processing legal question", question=request.question, model=request.model)
+        logger.info("Processing legal question", model=request.model)
 
         # Step 1: Handle cross-lingual query translation if query is in Khmer
         search_query = self._prepare_search_query(request.question)
@@ -138,15 +139,37 @@ class AnswerLegalQAUseCase:
         if not is_khmer:
             return question
 
-        # Basic legal dictionary for instant zero-latency mapping
+        # Method 1: Try dynamic translation using DeepSeek Flash if client is active
+        if hasattr(self._llm, "_client") and self._llm._client:
+            try:
+                prompt = (
+                    "Translate this Cambodian legal question into 4-6 English legal search keywords "
+                    "for searching statutory articles in the Cambodian Civil Code / Commercial Law.\n"
+                    "Output ONLY the space-separated English keywords, nothing else.\n\n"
+                    f"Question: {question}"
+                )
+                response = self._llm._client.chat.completions.create(
+                    model="deepseek-chat",
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.0,
+                    max_tokens=60,
+                )
+                translated = response.choices[0].message.content.strip()
+                if translated and len(translated) > 2:
+                    logger.info("DeepSeek translated query", search_query=translated)
+                    return translated
+            except Exception:
+                pass
+
+        # Method 2: Comprehensive legal dictionary fallback
         khmer_legal_mappings = {
             "កិច្ចសន្យា": "contract agreement",
-            "បង្កើត": "formation create execute",
+            "បង្កើត": "formation create",
             "សំណើ": "offer",
             "ការព្រមទទួល": "acceptance",
             "ក្រមរដ្ឋប្បវេណី": "Civil Code",
             "មោឃៈ": "void invalid",
-            "លុបចោល": "rescission cancel terminate",
+            "លុបចោល": "rescission terminate cancel",
             "សំណង": "damages compensation",
             "ខូចខាត": "loss harm defect",
             "កាតព្វកិច្ច": "obligation duty",
@@ -160,6 +183,8 @@ class AnswerLegalQAUseCase:
             "ចលនវត្ថុ": "movable property",
             "អាយុកាលកំណត់": "extinctive prescription limitation period",
             "សុចរិត": "good faith",
+            "បំណុល": "debt monetary obligation",
+            "ទាមទារ": "claim demand remedy",
         }
 
         matched_terms = []
@@ -167,14 +192,13 @@ class AnswerLegalQAUseCase:
             if kh_term in question:
                 matched_terms.append(en_term)
 
-        # Extract any numbers (like article numbers)
         numbers = re.findall(r"\b\d+\b", question)
         if numbers:
             matched_terms.extend([f"Article {n}" for n in numbers])
 
         if matched_terms:
             search_query = " ".join(matched_terms)
-            logger.info("Mapped Khmer query to English search terms", original=question, search_query=search_query)
+            logger.info("Mapped Khmer query via dictionary", search_query=search_query)
             return search_query
 
         return question
