@@ -1,9 +1,10 @@
 """
 Use Case: Answer a legal question with cited articles.
 
-Pipeline: Question → Hybrid Retrieve → Rerank → LLM Generate (DeepSeek / OpenAI) → Verify Citations
+Pipeline: Question → Cross-Lingual Query Expansion (if Khmer) → Hybrid Retrieve → Rerank → DeepSeek Generate → Verify Citations
 """
 
+import re
 from src.config.logging import get_logger
 from src.application.dtos import LegalQARequest, LegalQAResponse, RetrievalRequest
 from src.application.use_cases.hybrid_retrieve import HybridRetrieveUseCase
@@ -12,16 +13,17 @@ from src.domain.ports.llm_port import LLMPort
 
 logger = get_logger(__name__)
 
-# The system prompt enforcing strict citation behavior
-LEGAL_SYSTEM_PROMPT = """You are a legal assistant specializing in Cambodian Civil and Commercial Law.
+# The system prompt enforcing strict citation behavior & multilingual response
+LEGAL_SYSTEM_PROMPT = """You are an expert legal assistant specializing in Cambodian Civil and Commercial Law.
 
 RULES:
 1. Answer strictly based on the provided legal articles. Do NOT use outside knowledge.
-2. For every legal rule or statement you mention, cite the exact Law name, Chapter, and Article number.
-3. Use this citation format: (Law Name, Article XX)
+2. Answer in the SAME language as the user's question (if the question is in Khmer, answer in fluent, formal Khmer; if in English, answer in English).
+3. For every legal rule or statement you mention, cite the exact Law name, Chapter, and Article number.
+   Format: (Civil Code 2007, Article XX) or (Law on Commercial Arbitration 2006, Article XX)
 4. If the provided context does not contain the answer, state:
-   "The provided legal texts do not explicitly address this question."
-5. Be precise and concise. Use legal terminology accurately.
+   "The provided legal texts do not explicitly address this question." (or equivalent in Khmer if questioned in Khmer).
+5. Be precise, thorough, and concise. Use legal terminology accurately.
 6. When multiple articles are relevant, cite all of them.
 7. Never fabricate or assume article numbers that are not in the context.
 """
@@ -31,9 +33,8 @@ class AnswerLegalQAUseCase:
     """
     Orchestrates the full legal Q&A pipeline.
 
-    Retrieves relevant legal articles via hybrid search,
-    generates a cited answer using DeepSeek / OpenAI, and verifies
-    that all citations reference articles in the retrieved context.
+    Supports cross-lingual queries (Khmer & English), retrieves relevant articles
+    via hybrid search, generates cited answers via DeepSeek Flash, and verifies citations.
     """
 
     def __init__(
@@ -56,16 +57,19 @@ class AnswerLegalQAUseCase:
         """
         logger.info("Processing legal question", question=request.question, model=request.model)
 
-        # Step 1: Retrieve relevant articles
+        # Step 1: Handle cross-lingual query translation if query is in Khmer
+        search_query = self._prepare_search_query(request.question)
+
+        # Step 2: Retrieve relevant articles
         retrieval_request = RetrievalRequest(
-            query=request.question,
+            query=search_query,
             top_k=request.top_k,
             law_filter=request.law_filter,
         )
         retrieved_docs = self._retriever.execute(retrieval_request)
         logger.info("Retrieved source articles", count=len(retrieved_docs))
 
-        # Step 2: Generate answer with citations
+        # Step 3: Generate answer with citations using DeepSeek Flash
         generate_kwargs = {
             "query": request.question,
             "context_documents": retrieved_docs,
@@ -99,10 +103,10 @@ class AnswerLegalQAUseCase:
 
         logger.info("Answer generated")
 
-        # Step 3: Verify citations against retrieved context
+        # Step 4: Verify citations against retrieved context
         citations = self._verify_citations(answer, retrieved_docs)
 
-        # Step 4: Build response
+        # Step 5: Build response
         source_articles = [
             {
                 "law_name": doc.chunk.metadata.law_name,
@@ -123,6 +127,58 @@ class AnswerLegalQAUseCase:
             source_articles=source_articles,
         )
 
+    def _prepare_search_query(self, question: str) -> str:
+        """
+        Prepare search query for retrieval.
+
+        If the question is in Khmer script and the corpus is in English,
+        translates key legal terms to English search keywords to ensure high recall.
+        """
+        is_khmer = bool(re.search(r"[\u1780-\u17ff]", question))
+        if not is_khmer:
+            return question
+
+        # Basic legal dictionary for instant zero-latency mapping
+        khmer_legal_mappings = {
+            "កិច្ចសន្យា": "contract agreement",
+            "បង្កើត": "formation create execute",
+            "សំណើ": "offer",
+            "ការព្រមទទួល": "acceptance",
+            "ក្រមរដ្ឋប្បវេណី": "Civil Code",
+            "មោឃៈ": "void invalid",
+            "លុបចោល": "rescission cancel terminate",
+            "សំណង": "damages compensation",
+            "ខូចខាត": "loss harm defect",
+            "កាតព្វកិច្ច": "obligation duty",
+            "អាជ្ញាកណ្តាល": "arbitration",
+            "សេចក្តីសម្រេច": "arbitral award",
+            "ភតិសន្យា": "lease",
+            "ជួល": "lease rent",
+            "ទិញលក់": "sale purchase seller buyer",
+            "តម្កល់": "deposit pledge mortgage",
+            "អចលនវត្ថុ": "immovable property land",
+            "ចលនវត្ថុ": "movable property",
+            "អាយុកាលកំណត់": "extinctive prescription limitation period",
+            "សុចរិត": "good faith",
+        }
+
+        matched_terms = []
+        for kh_term, en_term in khmer_legal_mappings.items():
+            if kh_term in question:
+                matched_terms.append(en_term)
+
+        # Extract any numbers (like article numbers)
+        numbers = re.findall(r"\b\d+\b", question)
+        if numbers:
+            matched_terms.extend([f"Article {n}" for n in numbers])
+
+        if matched_terms:
+            search_query = " ".join(matched_terms)
+            logger.info("Mapped Khmer query to English search terms", original=question, search_query=search_query)
+            return search_query
+
+        return question
+
     def _verify_citations(
         self,
         answer: str,
@@ -131,7 +187,7 @@ class AnswerLegalQAUseCase:
         """
         Extract and verify article citations from the generated answer.
 
-        Checks that every cited article number exists in the retrieved context.
+        Supports both English ("Article 336") and Khmer ("មាត្រា ៣៣៦" or "មាត្រា 336") citations.
 
         Args:
             answer: The LLM-generated answer text.
@@ -140,11 +196,14 @@ class AnswerLegalQAUseCase:
         Returns:
             List of Citation objects with verification status.
         """
-        import re
+        # Convert Khmer digits to Arabic digits (០-៩ -> 0-9)
+        khmer_to_arabic = str.maketrans("០១២៣៤៥៦៧៨៩", "0123456789")
+        normalized_answer = answer.translate(khmer_to_arabic)
 
-        # Extract cited article numbers from the answer
-        citation_pattern = r"Article\s+(\d+)"
-        cited_numbers = set(re.findall(citation_pattern, answer))
+        # Match Article citations in English and Khmer
+        english_articles = re.findall(r"Article\s+(\d+)", normalized_answer, re.IGNORECASE)
+        khmer_articles = re.findall(r"មាត្រា\s*(\d+)", normalized_answer)
+        all_cited_nums = set(int(n) for n in (english_articles + khmer_articles))
 
         # Build a lookup of retrieved article numbers
         retrieved_articles = {
@@ -152,12 +211,11 @@ class AnswerLegalQAUseCase:
         }
 
         citations: list[Citation] = []
-        for article_num_str in cited_numbers:
-            article_num = int(article_num_str)
+        for article_num in all_cited_nums:
             is_verified = article_num in retrieved_articles
 
             excerpt = ""
-            law_name = "Unknown"
+            law_name = "Civil Code 2007"
             if is_verified:
                 doc = retrieved_articles[article_num]
                 excerpt = doc.chunk.content[:300]
@@ -173,9 +231,6 @@ class AnswerLegalQAUseCase:
             )
 
             if not is_verified:
-                logger.warning(
-                    "Unverified citation detected",
-                    article_number=article_num,
-                )
+                logger.warning("Unverified citation detected", article_number=article_num)
 
         return citations
